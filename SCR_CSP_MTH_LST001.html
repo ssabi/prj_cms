@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN WRAP -->
+<div id="wrap" class="admin">
+  <!-- HEADER -->
+  <div id="admin_header">  
+    <div class="sta">
+      <div class="inner_wrap">
+        <div class="title">
+          <h1><a href="#"><b>MKIS</b><em>마케팅지식정보시스템</em></a></h1>
+        </div>
+        <div class="link">
+          <a href="#"><i class="icon icon_person2"></i><em>검색관리자</em></a>
+          <a href="#"><i class="icon icon_question"></i><em>도움말</em></a>
+        </div>
+      </div>
+    </div>
+    <nav class="admin_gnb">
+      <ul class="depth1">
+        <li class="on">
+          <a href="#">
+            <em>사용자 관리</em>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <em>컨텐츠 관리</em>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <em>메뉴 관리</em>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <em>시스템 관리</em>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <em>통계 관리</em>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <em>기타 관리</em>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- //HEADER -->
+  <!-- BEGIN CONTAINER -->
+  <div id="container">
+    <div class="inner_wrap">
+      <!-- SNB -->
+      <div class="admin_snb">
+        <h2><b>메뉴명</b></h2> 
+        <nav class="lnb">
+          <ul class="depth1">
+            <li class="on">
+              <a href="#">하위메뉴1</a>
+            </li>
+            <li>
+              <a href="#">하위메뉴2</a>
+            </li>
+            <li>
+              <a href="#">하위메뉴3</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- //SNB -->
+      <!-- BEGIN CONTENTS -->
+      <div id="content">
+        <section class="v1">
+          <div class="row">
+            <div class="section_title">
+              <h3>컨텐츠 통계현황</h3>
+              <div class="breadcrumb">
+                <a href="#">통계 관리</a>
+                <i></i>
+                <a href="#" class="curr">통계 요청</a>
+              </div>
+            </div>
+            <div class="search_condition">   
+              <table class="search">
+                <colgroup class="admin_width7">
+                  <col class="c1">
+                  <col class="c2">
+                  <col class="c3">
+                  <col class="c4">
+                  <col class="c5">
+                  <col class="c6">
+                  <col class="c7">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">조직구분</th>
+                    <td>
+                      <label class="label_check"><input type="checkbox" checked="checked"><i></i><em>SKT</em></label>
+                      <label class="label_check"><input type="checkbox"><i></i><em>SKB</em></label>
+                    </td>
+                    <th scope="row">채널구분</th>
+                    <td>
+                      <label class="label_check"><input type="checkbox" checked="checked"><i></i><em>고객센터</em></label>
+                      <label class="label_check"><input type="checkbox" checked="checked"><i></i><em>대리점</em></label>
+                      <label class="label_check"><input type="checkbox" checked="checked"><i></i><em>지점</em></label>
+                      <label class="label_check"><input type="checkbox" checked="checked"><i></i><em>기타</em></label>
+                    </td>
+                    <th scope="row">검색기간</th>
+                    <td>
+                      <input type="text" data-datepicker="true">
+                      <i class="icon icon_swungdash"></i>
+                      <input type="text" data-datepicker="true">
+                    </td>
+                    <td class="align_r">
+                      <button class="btn v1" type="button"><em>조회</em></button> 
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="list_area">
+              <div class="title_bar v1">
+                <div class="col1">
+                  <em>컨텐츠 요청 현황</em>
+                </div>
+                <div class="col2">
+                  <button type="button" class="btn v1 big1"><em>엑셀 다운로드</em></button>
+                </div>
+              </div>
+              <table class="v11">
+                <colgroup class="admin_width3">
+                  <col class="c1">
+                  <col class="c2">
+                  <col class="c3">
+                  <col class="c4">
+                  <col class="c5">
+                  <col class="c6">
+                  <col class="c7">
+                  <col class="c8">
+                  <col class="c9">
+                  <col class="c10">
+                  <col class="c11">
+                  <col class="c12">
+                  <col class="c13">
+                  <col class="c14">
+                  <col class="c15">
+                  <col class="c16">
+                  <col class="c17">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">요청<br>구분</th>
+                    <th scope="col">조직<br>구분</th>
+                    <th scope="col">요청<br>제목</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">요청<br>일시</th>
+                    <th scope="col">요청<br>조직</th>
+                    <th scope="col">요청자</th>
+                    <th scope="col">이관자</th>
+                    <th scope="col">처리<br>일시</th>
+                    <th scope="col">처리<br>소요<br>시간</th>
+                    <th scope="col">처리자</th>
+                    <th scope="col">요청<br>내용</th>
+                    <th scope="col">처리<br>내용</th>
+                    <th scope="col">대분류</th>
+                    <th scope="col">중분류</th>
+                    <th scope="col">소분류</th>
+                    <th scope="col">관련<br>컨텐츠<br>제목</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="paginate">
+                <!-- 비활성화시 .disabled 추가 -->
+                <a href="javascript:;" class="ctrl start" title="처음"><i></i></a>
+                <a href="javascript:;" class="ctrl prev" title="이전"><i></i></a>
+                <span class="pages">
+                  <a href="javascript:;">1</a>
+                  <a href="javascript:;">2</a>
+                  <a href="javascript:;">3</a>
+                  <a href="javascript:;">4</a>
+                  <a href="javascript:;">5</a>
+                  <a href="javascript:;">6</a>
+                  <a href="javascript:;">7</a>
+                  <a href="javascript:;">8</a>
+                  <a href="javascript:;">9</a>
+                  <a href="javascript:;" class="curr">10</a>
+                </span>
+                <a href="javascript:;" class="ctrl next" title="다음"><i></i></a>
+                <a href="javascript:;" class="ctrl end" title="끝"><i></i></a>
+                <!-- 비활성화시 .disabled 추가 -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="list_area">
+              <div class="title_bar v1">
+                <div class="col1">
+                  <em>전체 컨텐츠 현황</em>
+                </div>
+                <div class="col2">
+                  <button type="button" class="btn v1 big1"><em>엑셀 다운로드</em></button>
+                </div>
+              </div>
+              <table class="v11">
+                <colgroup class="admin_width4">
+                  <col class="c1">
+                  <col class="c2">
+                  <col class="c3">
+                  <col class="c4">
+                  <col class="c5">
+                  <col class="c6">
+                  <col class="c7">
+                  <col class="c8">
+                  <col class="c9">
+                  <col class="c10">
+                  <col class="c11">
+                  <col class="c12">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">구분</th>
+                    <th scope="col">조직</th>
+                    <th scope="col">조회대상</th>
+                    <th scope="col">대분류</th>
+                    <th scope="col">중분류</th>
+                    <th scope="col">소분류</th>
+                    <th scope="col">컨텐츠 명</th>
+                    <th scope="col">컨텐츠<br>담당자</th>
+                    <th scope="col">첨부파일<br>여부</th>
+                    <th scope="col">최종<br>변경자ID</th>
+                    <th scope="col">최종<br>변경일시</th>
+                    <th scope="col">총<br>조회수</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="paginate">
+                <!-- 비활성화시 .disabled 추가 -->
+                <a href="javascript:;" class="ctrl start" title="처음"><i></i></a>
+                <a href="javascript:;" class="ctrl prev" title="이전"><i></i></a>
+                <span class="pages">
+                  <a href="javascript:;">1</a>
+                  <a href="javascript:;">2</a>
+                  <a href="javascript:;">3</a>
+                  <a href="javascript:;">4</a>
+                  <a href="javascript:;">5</a>
+                  <a href="javascript:;">6</a>
+                  <a href="javascript:;">7</a>
+                  <a href="javascript:;">8</a>
+                  <a href="javascript:;">9</a>
+                  <a href="javascript:;" class="curr">10</a>
+                </span>
+                <a href="javascript:;" class="ctrl next" title="다음"><i></i></a>
+                <a href="javascript:;" class="ctrl end" title="끝"><i></i></a>
+                <!-- 비활성화시 .disabled 추가 -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="list_area">
+              <div class="title_bar v1">
+                <div class="col1">
+                  <em>질문마당 통계</em>
+                </div>
+                <div class="col2">
+                  <button type="button" class="btn v1 big1"><em>엑셀 다운로드</em></button>
+                </div>
+              </div>
+              <table class="v11 size1">
+                <colgroup class="admin_width5">
+                  <col class="c1">
+                  <col class="c2">
+                  <col class="c3">
+                  <col class="c4">
+                  <col class="c5">
+                  <col class="c6">
+                  <col class="c7">
+                  <col class="c8">
+                  <col class="c9">
+                  <col class="c10">
+                  <col class="c11">
+                  <col class="c12">
+                  <col class="c13">
+                  <col class="c14">
+                  <col class="c15">
+                  <col class="c16">
+                  <col class="c17">
+                  <col class="c18">
+                  <col class="c19">
+                  <col class="c20">
+                  <col class="c21">
+                  <col class="c22">
+                  <col class="c23">
+                  <col class="c24">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">업무구분</th>
+                    <th scope="col">조직구분</th>
+                    <th scope="col">질문제목</th>
+                    <th scope="col">문의유형</th>
+                    <th scope="col">고객정보</th>
+                    <th scope="col">질문내용</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">요청자 상위부서</th>
+                    <th scope="col">요청자소속부서</th>
+                    <th scope="col">요청자ID</th>
+                    <th scope="col">요청자명</th>
+                    <th scope="col">요청일시</th>
+                    <th scope="col">1차처리일시</th>
+                    <th scope="col">1차처리소요시간</th>
+                    <th scope="col">이관자</th>
+                    <th scope="col">이관일시</th>
+                    <th scope="col">최종처리일시</th>
+                    <th scope="col">최종처리소요시간</th>
+                    <th scope="col">최종처리자명</th>
+                    <th scope="col">최종처리조직</th>
+                    <th scope="col">답변내용</th>
+                    <th scope="col">분석분류(결과)</th>
+                    <th scope="col">사업부서명</th>
+                    <th scope="col">사업부서담당매니저명</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="paginate">
+                <!-- 비활성화시 .disabled 추가 -->
+                <a href="javascript:;" class="ctrl start" title="처음"><i></i></a>
+                <a href="javascript:;" class="ctrl prev" title="이전"><i></i></a>
+                <span class="pages">
+                  <a href="javascript:;">1</a>
+                  <a href="javascript:;">2</a>
+                  <a href="javascript:;">3</a>
+                  <a href="javascript:;">4</a>
+                  <a href="javascript:;">5</a>
+                  <a href="javascript:;">6</a>
+                  <a href="javascript:;">7</a>
+                  <a href="javascript:;">8</a>
+                  <a href="javascript:;">9</a>
+                  <a href="javascript:;" class="curr">10</a>
+                </span>
+                <a href="javascript:;" class="ctrl next" title="다음"><i></i></a>
+                <a href="javascript:;" class="ctrl end" title="끝"><i></i></a>
+                <!-- 비활성화시 .disabled 추가 -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- //CONTENTS -->
+    </div> 
+  </div>
+  <!-- //CONTAINER -->
+  <div id="footer">
+    <div class="inner_wrap">
+      <footer>
+        <h2>MKIS 정보시스템</h2>
+        <address>
+          서울특별시 중구 을지로 65(을지로 2가) SK텔레콤 빌딩&nbsp;&nbsp;|&nbsp;&nbsp;대표이사 사장 : 장동현<br>
+          Copyright ⓒ 2017 CMS.Co.Ltd. All rights reserved. 
+        </address>
+        <div class="link">
+          <!--span class="select_family">
+            <select data-select="true">
+              <option>FAMILY SITE</option>
+              <option>SITE A</option>
+              <option>SITE B</option>
+              <option>SITE C</option>
+              <option>SITE D</option>
+              <option>SITE E</option>
+            </select>
+          </span-->
+        </div>
+      </footer>
+    </div>  
+  </div>
+  <!-- //FOOTER -->
+  <!--button type="button" id="to_top" class="hide"></button-->
+</div>
+<!-- //WRAP -->
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

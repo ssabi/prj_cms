@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1">
+  <section>
+    <div class="p_title">
+      <h3>즐겨찾기 전송</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <ul class="desc_list size1">
+        <li>
+          <em class="desc alert">* 전송할 폴더를 선택해주세요. 선택한 폴더의 하위 폴더까지 모두 전송됩니다.</em>
+        </li>
+      </ul>
+      <div class="p_content">
+        <div class="row">
+          <div class="column_area v2">
+            <div class="col1">
+              <!-- jstree_area -->
+              <div class="jstree_area size3">
+                
+                <div class="jstree_header">
+                  <div class="tit">
+                    <strong>즐겨찾기 분류</strong>
+                  </div>
+                  <div class="ctrl">
+                    <!--
+                    <button type="button" class="btn toggle2" data-node-ctrl='{"type":"toggle","tree":"jstree1"}'><i></i><em class="extend_msg">펼쳐보기</em><em class="collapse_msg">접기</em></button>
+                    -->
+                  </div>
+                </div>
+                <div class="jstree_container">
+                  <!-- nodata일시 
+                  <div class="no_tree_data">등록된 폴더가 없습니다.</div>
+                  -->
+                  <div id="jstree1"></div>
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                          $('#jstree1').jstree({ 
+                            'core' : {
+                              "check_callback" : true,
+                              'data' : [
+                                 {
+                                   text : '즐겨찾기',
+                                   state : {
+                                     'opened' : true,
+                                     'selected' : false
+                                   },
+                                   li_attr : { "class": "folder"},
+                                   children : [
+                                     { 
+                                        text : '즐겨찾기 1',                                        
+                                        children : [
+                                          { 
+                                            text : '즐겨찾기 1 1',
+                                            state : {
+                                             'opened' : false,
+                                             'selected' : false
+                                            },
+                                            children : [
+                                              { 
+                                                text : '즐겨찾기 1 1 1',
+                                                state : {
+                                                 'opened' : false,
+                                                 'selected' : false
+                                                }
+                                              },
+                                              { 
+                                                text : '즐겨찾기 1 1 2',
+                                                state : {
+                                                 'opened' : false,
+                                                 'selected' : false
+                                                }
+                                              },
+                                              { 
+                                                text : '즐겨찾기 1 1 3',
+                                                state : {
+                                                 'opened' : false,
+                                                 'selected' : false
+                                                }
+                                              }
+                                            ]
+                                          },{
+											text : '즐겨찾기 1 2'
+										  }
+                                        ]
+                                     },
+									 {
+										text : '즐겨찾기 2'
+									 }
+                                   ]
+                                }
+                              ]
+                          } });
+                        });
+                    </script>
+                  </div>
+                </div>
+              <!-- //.jstree_area -->    
+            </div>
+            <div class="col2">
+              <button type="button" class="btn move size1"><em>선택<br>등록</em><i></i></button>
+            </div>
+            <div class="col3">
+              <div class="info_area v1">
+                <div class="info_title">
+                  <strong>선택폴더</strong>
+                </div>
+                <div class="info_content size1">
+                  <div class="target_link_area size2">
+                    <span><em>즐겨찾기 2</em><button type="button" class="btn"><em>삭제</em></button></span>
+                    <span><em>즐겨찾기 3</em><button type="button" class="btn"><em>삭제</em></button></span>
+                    <span><em>즐겨찾기 4</em><button type="button" class="btn"><em>삭제</em></button></span>
+                    <span><em>즐겨찾기 5</em><button type="button" class="btn"><em>삭제</em></button></span>
+                    <span><em>즐겨찾기 6</em><button type="button" class="btn"><em>삭제</em></button></span>
+                    <span><em>즐겨찾기 7</em><button type="button" class="btn"><em>삭제</em></button></span>
+                    <span><em>즐겨찾기 8 즐겨찾기 8</em><button type="button" class="btn"><em>삭제</em></button></span>
+                  </div>
+                </div>
+                <div class="info_title">
+                  <strong>수신자 입력</strong>
+                </div>
+                <div class="info_content size2">
+                  <div class="info_row">
+                    <div class="search_bar v1">
+                      <div class="desc"><em>* ID 또는 이름 검색 후 전송할 대상을 선택해주세요.</em></div>
+                      <div class="field v1">
+                        <div class="col1">
+                          <input type="text">
+                        </div>
+                        <div class="col2">
+                          <button type="button" class="btn v1"><em>검색</em></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="info_row">
+                    <div class="column_area v3">
+                      <div class="col1">
+                        <div class="wrap_fixed_list size2">
+                          <table class="v4 fixed_list_header">
+                            <colgroup class="width2">
+                              <col class="c1">
+                              <col class="c2">  
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th scope="col" colspan="2">검색결과</th>
+                              </tr>
+                            </thead>
+                          </table>
+                          <div class="fixed_list_body">
+                            <table class="v4" data-move-from="data_from_1">
+                              <colgroup class="width2">
+                                <col class="c1">
+                                <col class="c2">
+                              </colgroup>
+                              <tbody>
+                                <!--
+                                <tr>
+                                  <td colspan="2" class="no_data size2">
+                                    검색 결과가 없습니다.
+                                  </td>
+                                </tr>
+                                -->
+                                <tr>
+                                  <td class="align_l">구로센터</td>
+                                  <td class="align_l">김철수(UK1500)</td>
+                                </tr>
+                                <tr>
+                                  <td class="align_l">구로센터</td>
+                                  <td class="align_l">김중수(UK1500)</td>
+                                </tr>
+                                <tr>
+                                  <td class="align_l">구로센터</td>
+                                  <td class="align_l">김고수(UK1500)</td>
+                                </tr>
+                                <tr>
+                                  <td class="align_l">구로센터</td>
+                                  <td class="align_l">김수(UK1500)</td>
+                                </tr>
+                                <tr>
+                                  <td class="align_l">구로센터</td>
+                                  <td class="align_l">김철(UK1500)</td>
+                                </tr>
+                                <tr>
+                                  <td class="align_l">구로센터</td>
+                                  <td class="align_l">김수철(UK1500)</td>
+                                </tr>
+                                <tr>
+                                  <td class="align_l">구로센터</td>
+                                  <td class="align_l">김철수1(UK1500)</td>
+                                </tr>
+                                <tr>
+                                  <td class="align_l">구로센터</td>
+                                  <td class="align_l">김철수2(UK1500)</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col2">
+                        <button type="button" class="btn move size2" data-move-fromto='{"type":"table_to_table1","from":"data_from_1","to":"data_to_1"}'><i></i></button>
+                      </div>
+                      <div class="col3">
+                        <div class="wrap_fixed_list size2">
+                          <table class="v4 fixed_list_header">
+                            <colgroup class="width3">
+                              <col class="c1">
+                              <col class="c2">  
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th scope="col" colspan="2">수신자</th>
+                              </tr>
+                            </thead>
+                          </table>
+                          <div class="fixed_list_body">
+                            <table class="v4" data-move-to="data_to_1">
+                              <colgroup class="width3">
+                                <col class="c1">
+                                <col class="c2">
+                              </colgroup>
+                              <tbody>
+                                <!--
+                                <tr>
+                                  <td colspan="2" class="no_data size2">
+                                    검색 결과가 없습니다.
+                                  </td>
+                                </tr>
+                                -->
+                                <tr>
+                                  <td class="align_l">이정수(UK1500)</td>
+                                  <td class="no_border_l">
+                                    <button type="button" class="btn delete2"><i></i></button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <script type="text/javascript">
+                            $('body').on('click','[data-move-fromto]',function(e) {
+
+                              var $this = $(this);
+                              var thisDataObj = $this.data('move-fromto');
+
+                              if (thisDataObj.type == 'table_to_table1') {
+                                var $from = $('[data-move-from="' + thisDataObj.from + '"]');
+                                var $to = $('[data-move-to="' + thisDataObj.to + '"]');
+
+                                $from.find('tr.on>td:last-child').each(function() {
+                                  var textToMove = $(this).text();
+                                  var isNotAlreadyMoved = true;
+                                  $to.find('tbody tr td:first-child').each(function() {
+                                    if ($(this).text() == textToMove) {
+                                      isNotAlreadyMoved = false;
+                                    }
+                                  });
+
+                                  if (isNotAlreadyMoved) {
+                                    var domToMove = '<tr><td class="'+ 'align_l">' + textToMove + '</td><td class="no_border_l"><button type="button" class="btn delete2"><i></i></button></td></tr>';
+
+                                    $to.find('tbody').append(domToMove);
+                                    
+                                  }
+
+                                  $(this).closest('tr').removeClass('on');
+                                });
+                              }
+                            });
+
+                            $('body').on('click','table.v4[data-move-from] tbody tr',function(e) {
+                              var $this = $(this);
+                              $this.toggleClass('on');
+                            });
+
+                            $('body').on('click','table.v4[data-move-to] button.delete2',function(e) {
+                              $(this).closest('tr').remove();
+                            });
+                          </script>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p_footer">
+        <button type="button" class="btn v1 red big1"><em>전송</em></button>
+        <button type="button" class="btn v1 grey big1"><em>취소</em></button>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

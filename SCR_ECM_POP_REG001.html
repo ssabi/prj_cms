@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1">
+  <section>
+    <div class="p_title">
+      <h3>만료 컨텐츠 복구설정</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <div class="p_content">
+        <div class="row">
+          <table class="v2">
+            <colgroup class="width2">
+              <col class="c1">
+              <col class="c2">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">게시기간</th>
+                <td>
+                  <ul class="in_list size1">
+                    <li>
+                      <label class="label_radio"><input type="radio" name="r_1" checked="checked"><i></i><em>1년</em></label>
+                      <label class="label_radio"><input type="radio" name="r_1"><i></i><em>5년</em></label>
+                      <label class="label_radio"><input type="radio" name="r_1"><i></i><em>10년</em></label>
+                    </li>
+                    <li>
+                      선택한 컨텐츠는 현재날짜를 기준으로
+                    </li>
+                    <li>
+                      <input type="text" data-datepicker="true" data-datepicker-opt="expand" class="pos1">
+                      <em>까지 게시합니다.</em>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+    <div class="p_footer">
+      <button type="button" class="btn v1 red big1"><em>복구</em></button>
+      <button type="button" class="btn v1 grey big1"><em>취소</em></button>
+    </div>
+  </div>
+</section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

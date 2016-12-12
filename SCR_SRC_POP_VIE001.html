@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1 size1">
+  <section>
+    <div class="p_title">
+      <h3>신규 검색어 등록 안내</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <ul class="desc_list size1">
+        <li class="align_r">
+          <em class="desc alert">* 검색하고자 하는 키워드가 존재하지 않을 경우, 아래와 같은 step으로 검색어 등록을 진행하시기 바랍니다.</em>
+        </li>
+      </ul>
+      <div class="p_content">
+        <div class="row">
+          <div class="reg_keyword">
+            <ul>
+              <li>
+                <em class="step">STEP 1</em>
+                <strong>사전검색(필수)</strong>
+                <i class="icon icon_reg_keyword1"></i>
+                <em class="action_desc">등록하고자 하는 키워드<br>입력 후 결과 확인</em>
+                <button><em>바로가기</em></button>
+              </li>
+              <li>
+                <em class="step">STEP 2</em>
+                <strong>신조어 사전등록</strong>
+                <i class="icon icon_reg_keyword2"></i>
+                <em class="action_desc">검색 결과 미존재 시<br>신조어 입력 후 엔진 적용</em>
+                <button><em>바로가기</em></button>
+              </li>
+              <li>
+                <em class="step">STEP 3</em>
+                <strong>동의어 사전등록</strong>
+                <i class="icon icon_reg_keyword3"></i>
+                <em class="action_desc">검색 결과 미존재 시<br>동의어 입력 후 엔진 적용</em>
+                <button><em>바로가기</em></button>
+              </li>
+            </ul>
+            <div class="etc">
+              <button type="button" class="btn v2 attach_doc"><i class="doc"></i><em>사전관리 매뉴얼 V1.Q docx</em></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p_footer">
+        <button type="button" class="btn v1 grey big1"><em>닫기</em></button>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

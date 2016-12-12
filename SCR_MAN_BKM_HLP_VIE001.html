@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1 size1">
+  <section>
+    <div class="p_title">
+      <h3>도움말</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <div class="p_content">
+        <div class="row">
+          <div class="help">
+            <div class="col1">
+              <nav class="lnb2" data-menu="lnb2">
+                <ul class="depth1">
+                  <li class="on">
+                    <i></i>
+                    <a href="#"><em>메인화면</em></a>
+                    <ul class="depth2">
+                      <li class="on">
+                        <a href="#"><em>공지사항</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>신규/변경 컨텐츠</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>인기/최근 검색어</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>인기/최근 컨텐츠</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>My 메뉴</em></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <i></i>
+                    <a href="#"><em>퀵메뉴</em></a>
+                    <ul class="depth2">
+                      <li>
+                        <a href="#"><em>하위메뉴1</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>하위메뉴2</em></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <i></i>
+                    <a href="#"><em>컨텐츠</em></a>
+                    <ul class="depth2">
+                      <li>
+                        <a href="#"><em>하위메뉴1</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>하위메뉴2</em></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <i></i>
+                    <a href="#"><em>공지사항</em></a>
+                    <ul class="depth2">
+                      <li>
+                        <a href="#"><em>하위메뉴1</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>하위메뉴2</em></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <i></i>
+                    <a href="#"><em>질문마당</em></a>
+                    <ul class="depth2">
+                      <li>
+                        <a href="#"><em>하위메뉴1</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>하위메뉴2</em></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <i></i>
+                    <a href="#"><em>공통</em></a>
+                    <ul class="depth2">
+                      <li>
+                        <a href="#"><em>하위메뉴1</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>하위메뉴2</em></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <i></i>
+                    <a href="#"><em>My 메뉴</em></a>
+                    <ul class="depth2">
+                      <li>
+                        <a href="#"><em>하위메뉴1</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>하위메뉴2</em></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col2">
+              <div class="hp_content">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p_footer">
+        <button type="button" class="btn v1 grey big1"><em>닫기</em></button>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1 size1">
+  <section>
+    <div class="p_title">
+      <h3>나의 즐겨찾기</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <div class="p_content">
+        <div class="row">
+          <div class="tab_group">
+            <div class="tab">
+              <div class="tab_row">
+                <div class="tab_t">
+                  <div class="col1">
+                    <div class="tab_row">
+                      <!-- jstree_area -->
+                      <div class="jstree_area size5">
+                        <div class="jstree_header">
+                          <div class="tit">
+                            <strong>즐겨찾기 분류</strong>
+                          </div>
+                          <div class="ctrl">
+                            <button type="button" class="btn toggle2" data-node-ctrl='{"type":"toggle","tree":"jstree1"}'><i></i><em class="extend_msg">펼쳐보기</em><em class="collapse_msg">접기</em></button>
+                          </div>
+                        </div>
+                        <div class="jstree_container">
+                          <div id="jstree1"><!-- jstree here --></div>
+                          <script type="text/javascript">
+                            $(document).ready(function(){
+                              $('#jstree1').jstree({ 
+                                'core' : {
+                                  "check_callback" : true,
+                                  'data' : [
+                                     {
+                                       text : '즐겨찾기',
+                                       state : {
+                                         'opened' : true,
+                                         'selected' : false
+                                       },
+                                       li_attr : { "class": "folder"},
+                                       children : [
+                                         { 
+                                            text : '즐겨찾기 1',
+                                            children : [
+                                              { 
+                                                text : '즐겨찾기 1 1',
+                                                state : {
+                                                 'opened' : false,
+                                                 'selected' : false
+                                                },
+                                                children : [
+                                                  { 
+                                                    text : '즐겨찾기 1 1 1',
+                                                    state : {
+                                                     'opened' : false,
+                                                     'selected' : false
+                                                    }
+                                                  },
+                                                  { 
+                                                    text : '즐겨찾기 1 1 2',
+                                                    state : {
+                                                     'opened' : false,
+                                                     'selected' : false
+                                                    }
+                                                  },
+                                                  { 
+                                                    text : '즐겨찾기 1 1 3',
+                                                    state : {
+                                                     'opened' : false,
+                                                     'selected' : false
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                         } 
+                                       ]
+                                    }
+                                  ]
+                              } });
+                            });
+                          </script>
+                        </div>
+                      </div>
+                      <!-- //.jstree_area -->
+                    </div>
+                  </div>
+                  <div class="col2">
+                    <div class="tab_row">
+                      <div class="p_search">
+                        <div class="t_fixed size1">
+                          <div class="t_c_middle col1">
+                            <em>폴더명 :</em>
+                          </div>
+                          <div class="t_c_middle col2">
+                            <input type="text" class="block" value="즐겨찾기 2.2" readonly="readonly">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab_row">
+                      <div class="list_area">
+                        <div class="summary">
+                          <div class="count">
+                            <em>[전체</em><b>30</b><em>건]</em>
+                          </div>
+                          <div class="sorting"></div>
+                        </div>
+                          <table class="v5">
+                            <colgroup class="width5">
+                              <col class="c1">
+                              <col class="c2">
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th scope="col">제목</th>
+                                <th scope="col">경로</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="align_l"><a href="javascript:;">단골 고객 관리 등록/해지</a></td>
+                                <td class="align_l">상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                              </tr>
+                              <tr>
+                                <td class="align_l"><a href="javascript:;">SKT 가입 제한</a></td>
+                                <td class="align_l">상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                              </tr>
+                              <tr>
+                                <td class="align_l"><a href="javascript:;">단골 고객 관리 등록/해지</a></td>
+                                <td class="align_l">상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                              </tr>
+                              <tr>
+                                <td class="align_l"><a href="javascript:;">SKT 가입 제한</a></td>
+                                <td class="align_l">상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                              </tr>
+                              <tr>
+                                <td class="align_l"><a href="javascript:;">단골 고객 관리 등록/해지</a></td>
+                                <td class="align_l">상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                              </tr>
+                              <tr>
+                                <td class="align_l"><a href="javascript:;">SKT 가입 제한</a></td>
+                                <td class="align_l">상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                              </tr>
+                              <tr>
+                                <td class="align_l"><a href="javascript:;">단골 고객 관리 등록/해지</a></td>
+                                <td class="align_l">상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                              </tr>
+                              <tr>
+                                <td class="align_l"><a href="javascript:;">SKT 가입 제한</a></td>
+                                <td class="align_l">상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                              </tr>
+                              <tr>
+                                <td class="align_l"><a href="javascript:;">단골 고객 관리 등록/해지</a></td>
+                                <td class="align_l">상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                              </tr>
+                              <tr>
+                                <td class="align_l"><a href="javascript:;">SKT 가입 제한</a></td>
+                                <td class="align_l">상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div class="paginate">
+                            <!-- 비활성화시 .disabled 추가 -->
+                            <a href="javascript:;" class="ctrl start" title="처음"><i></i></a>
+                            <a href="javascript:;" class="ctrl prev" title="이전"><i></i></a>
+                            <span class="pages">
+                              <a href="javascript:;">1</a>
+                              <a href="javascript:;">2</a>
+                              <a href="javascript:;">3</a>
+                              <a href="javascript:;">4</a>
+                              <a href="javascript:;">5</a>
+                              <a href="javascript:;">6</a>
+                              <a href="javascript:;">7</a>
+                              <a href="javascript:;">8</a>
+                              <a href="javascript:;">9</a>
+                              <a href="javascript:;" class="curr">10</a>
+                            </span>
+                            <a href="javascript:;" class="ctrl next" title="다음"><i></i></a>
+                            <a href="javascript:;" class="ctrl end" title="끝"><i></i></a>
+                            <!-- 비활성화시 .disabled 추가 -->
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p_footer">
+        <button type="button" class="btn v1 grey big1"><em>닫기</em></button>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

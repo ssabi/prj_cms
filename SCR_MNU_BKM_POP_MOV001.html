@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1 size3">
+  <section>
+    <div class="p_title">
+      <h3>즐겨찾기 전송</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <ul class="desc_list size1">
+        <li>
+          <em class="desc alert">* 이동할 폴더를 선택해주세요.</em>
+        </li>
+      </ul>
+      <div class="p_content">
+        <div class="row">
+          <!-- jstree_area -->
+          <div class="jstree_area size4">  
+            <div class="jstree_header">
+              <div class="tit">
+                <strong>폴더이동</strong>
+              </div>
+              <div class="ctrl">
+                <button type="button" class="btn toggle2" data-node-ctrl='{"type":"toggle","tree":"jstree1"}'><i></i><em class="extend_msg">펼쳐보기</em><em class="collapse_msg">접기</em></button>
+              </div>
+            </div>
+            <div class="jstree_container">
+              <!-- nodata일시 
+              <div class="no_tree_data">등록된 폴더가 없습니다.</div>
+              -->
+              <div id="jstree1"></div>
+                <script type="text/javascript">
+                  $(document).ready(function(){
+                    $('#jstree1').jstree({ 
+                      'core' : {
+                        "check_callback" : true,
+                        'data' : [
+                           {
+                             text : '즐겨찾기',
+                             state : {
+                               'opened' : true,
+                               'selected' : false
+                             },
+                             li_attr : { "class": "folder"},
+                             children : [
+                               { 
+                                  text : '즐겨찾기 1',                                        
+                                  children : [
+                                    { 
+                                      text : '즐겨찾기 1 1',
+                                      state : {
+                                       'opened' : false,
+                                       'selected' : false
+                                      },
+                                      children : [
+                                        { 
+                                          text : '즐겨찾기 1 1 1',
+                                          state : {
+                                           'opened' : false,
+                                           'selected' : false
+                                          }
+                                        },
+                                        { 
+                                          text : '즐겨찾기 1 1 2',
+                                          state : {
+                                           'opened' : false,
+                                           'selected' : false
+                                          }
+                                        },
+                                        { 
+                                          text : '즐겨찾기 1 1 3',
+                                          state : {
+                                           'opened' : false,
+                                           'selected' : false
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                               } 
+                             ]
+                          }
+                        ]
+                    } });
+                  });
+                </script>
+              </div>
+              <div class="jstree_footer v1">
+                <div class="path"><span>선택폴더 :</span>즐겨찾기 2&nbsp;&gt;&nbsp;즐겨찾기 2.2즐겨찾기 2</div>
+              </div>
+            </div>
+          <!-- //.jstree_area --> 
+          
+        </div>
+      </div>
+      <div class="p_footer">
+        <button type="button" class="btn v1 red big1"><em>이동</em></button>
+        <button type="button" class="btn v1 grey big1"><em>취소</em></button>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

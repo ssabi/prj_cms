@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1 size1">
+  <section>
+    <div class="p_title">
+      <h3>이용약관</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <div class="p_header">
+        <div class="tit">
+          <strong></strong>
+        </div>
+        <div class="ctrl">
+          <button type="button" class="btn v1 grey"><em>변경이력</em></button>
+        </div>  
+      </div>
+      <div class="p_content">
+        <div class="row">
+          <!-- 내용시작 -->
+          <table class="v2" data-toggle-accordion-collapse="collapse1">
+            <colgroup class="width4">
+              <col class="c1">
+              <col class="c2">
+              <col class="c3">
+              <col class="c4">
+              <col class="c5">
+              <col class="c6">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">제목</th>
+                <td colspan="4">SKT 가입제한</td>
+                <td class="align_r"></td>
+              </tr>
+              <tr>
+                <th scope="row">경로</th>
+                <td colspan="5">공지사항&nbsp;&gt;&nbsp;실시간&nbsp;&gt;&nbsp;이용약관</td>
+              </tr>
+              <tr>
+                <th scope="row">시행일</th>
+                <td>2016-06-15</td>
+                <th scope="row">등록일</th>
+                <td>2016-06-15</td>
+                <th scope="row">Tworld게시</th>
+                <td>게시</td>
+              </tr>
+              <tr>
+                <th scope="row">약관내용</th>
+                <td colspan="5" class="size2">
+                  <table class="v3">
+                    <colgroup class="width1">
+                      <col class="c1">
+                      <col class="c2">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td colspan="2" class="no_pad"><!-- .no_pad 클래쓰 부여-->
+                          <div class="view_area">
+                            <div class="view_row">
+                              <div class="view_content size1">
+                                이용약관 내용 출력
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- //내용끝 -->
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">첨부파일</th>
+                <td colspan="5">
+                  <div class="file_upload_area">
+                    "--file upload here--"
+                  </div>
+                  <button type="button" class="btn v2"><em>열기</em></button>
+                  <button type="button" class="btn v2"><em>다운로드</em></button>
+                  <button type="button" class="btn v2"><em>전체 다운로드</em></button>
+                </td>
+              </tr>
+            </tbody>
+          </table> 
+        </div>
+      </div>
+      <div class="p_footer">
+        <div class="t_auto">
+          <div class="t_c_middle">
+            <button type="button" class="btn v1 big1"><em>수정</em></button>
+            <button type="button" class="btn v1 big1"><em>만료 처리</em></button>
+          </div>
+          <div class="t_c_middle align_r">
+            <button type="button" class="btn v1 big1 grey"><em>닫기</em></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

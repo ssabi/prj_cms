@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1 size1">  
+  <section>
+    <div class="p_title">
+      <h3>분류선택</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <div class="p_header">
+        <div class="tit">
+        </div>
+        <div class="ctrl">
+          <em class="desc alert">*등록할 분류를 선택해주세요. 상위 분류 선택시 등록한 하위분류를 확인할 수 있습니다.</em>
+        </div>
+      </div>
+      <div class="p_content">
+        <div class="row">
+          <div class="class_table">
+            <div class="class_col">
+              <div class="in_wrap">
+                <div class="title">
+                <strong>1차 분류</strong>
+              </div>
+                <ul class="class_list">
+                  <li class="on">
+                    <a href="javascript:;">공통</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="class_col">
+              <div class="in_wrap">
+                <div class="title">
+                <strong>2차 분류</strong>
+              </div>
+                <ul class="class_list">
+                  <li class="on">
+                    <a href="javascript:;">이용약관</a>
+                  </li> 
+                </ul>
+              </div>
+            </div>
+            <div class="class_col">
+              <div class="in_wrap">
+                <div class="title">
+                <strong>3차 분류</strong>
+              </div>
+                <ul class="class_list">
+                  <li class="on">
+                    <a href="javascript:;">SKT 이용약관</a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">SKT 기타 이용약관</a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">SKT 재판매 이용약관</a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">구 서비스 이용약관</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="class_col">
+              <div class="in_wrap">
+                <div class="title">
+                <strong>4차 분류</strong>
+              </div>
+                <ul class="class_list no_data">
+                  <li>
+                    <em>4차 분류가 없습니다.</em>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="class_status">
+            <div class="class_selected">
+              <b>선택분류 :</b><em>공통&nbsp;&gt;&nbsp;이용약관&nbsp;&gt;&nbsp;SKT 이용약관&nbsp;&gt;&nbsp;이동전화 이용약관</em>
+            </div>
+            <div class="initiaize">
+              <button type="button" class="btn v2 size3"><i class="icon icon_initialize"></i><em>선택 초기화</em></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p_footer">
+        <button type="button" class="btn v1 red big1"><em>분류 등록</em></button>
+        <button type="button" class="btn v1 grey big1"><em>취소</em></button>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

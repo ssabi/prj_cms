@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1 size1">
+  <section>
+    <div class="p_title">
+      <h3>이용약관</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <div class="p_header">
+        <div class="tit">
+          <strong></strong>
+        </div>
+        <div class="ctrl">
+          <em class="desc alert">*는 필수 입력 항목입니다.</em>
+        </div>  
+      </div>
+      <div class="p_content">
+        <div class="row">
+          <!-- 내용시작 -->
+          <table class="v2" data-toggle-accordion-collapse="collapse1">
+            <colgroup class="width4">
+              <col class="c1">
+              <col class="c2">
+              <col class="c3">
+              <col class="c4">
+              <col class="c5">
+              <col class="c6">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row" class="essential">제목</th>
+                <td colspan="5">
+                  <input type="text" class="size1">
+                  <em class="desc alert">*최대100자</em>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="essential">분류</th>
+                <td colspan="5">
+                  <em>공통&nbsp;&gt;&nbsp;이용약관&nbsp;&gt;&nbsp;SKT 이용약관</em>
+                  <button type="button" class="btn v2"><em>분류선택</em></button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="essential">시행일</th>
+                <td colspan="2"><input type="text" data-datepicker="true"></td>
+                <th scope="row">Tworld게시</th>
+                <td colspan="2"><label class="label_check"><input type="checkbox"><i></i><em>게시</em></label></td>
+              </tr>
+              <tr>
+                <th scope="row" class="essential">내용</th>
+                <td colspan="5" class="size2">
+                  <table class="v3">
+                    <colgroup class="width1">
+                      <col class="c1">
+                      <col class="c2">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td colspan="2" class="no_pad"><!-- .no_pad 클래쓰 부여-->
+                          <div class="editor_area">
+                          "--insert editor here--"         
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- //내용끝 -->
+                  <ul class="desc_list size2">
+                    <li>
+                      <em class="desc alert">* T world 이외 고객접점채널에서 고객에게 바로 보여지므로, 이용약관 전문 내용 전체를 기입하시기 바랍니다.</em>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">첨부파일</th>
+                <td colspan="5">
+                  <div class="file_upload_area">
+                    "--file upload here--"
+                  </div>
+                  <button type="button" class="btn v2"><em>열기</em></button>
+                  <button type="button" class="btn v2"><em>다운로드</em></button>
+                  <button type="button" class="btn v2"><em>전체 다운로드</em></button>
+                  <ul class="desc_list size3">
+                    <li>
+                      <em class="desc alert">* T world 게시가 필요한 경우 아래 파일을 확장자 종류별로 모두 문서보안 해제 후 첨부해야 합니다.<br>
+                      &nbsp;<span style="text-decoration:underline">약관전문파일 3개(.doc, .hwp, .pdf), 별표(요금표)파일 1개(.doc)</span></em>
+                    </li>
+                    <li>
+                      <em class="desc alert">* 신구조문비교표도 첨부파일로 올려주시면 업무에 참고가 됩니다.</em>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="essential">변경내용</th>
+                <td colspan="5">
+                  <input type="text" class="size1">
+                  <em class="desc alert">*최대200자</em>
+                </td>
+              </tr>
+            </tbody>
+          </table> 
+        </div>
+      </div>
+      <div class="p_footer">
+        <button type="button" class="btn v1 red big1"><em>수정</em></button>
+        <button type="button" class="btn v1 grey big1"><em>취소</em></button>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1 size1">
+  <section>
+    <div class="p_title">
+      <h3>내 요청 관리&nbsp;&gt;&nbsp;묻고 답하기</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <div class="p_content">
+        <div class="row">
+          <table class="v2">
+            <colgroup class="width7">
+              <col class="c1">
+              <col class="c2">
+              <col class="c3">
+              <col class="c4">
+              <col class="c5">
+              <col class="c6">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">제목</th>
+                <td colspan="3">고객 명의로 변경 후 다시 TV플러스 결합시 가입 기간승계가 가능한지요?</td>
+                <th scope="row">상태</th>
+                <td>접수</td>
+              </tr>
+              <tr>
+                <th scope="row">문의유형</th>
+                <td>직무질의</td>
+                <th scope="row">조직구분</th>
+                <td>SKT</td>
+                <th scope="row">업무구분</th>
+                <td>유선</td>
+              </tr>
+              <tr>
+                <th scope="row">서비스 관리번호</th>
+                <td>ab123390</td>
+                <th scope="row">요청자</th>
+                <td>김철수 (AB12345)/장안센터</td>
+                <th scope="row">요청일</th>
+                <td>2016-06-15 13:22</td>
+              </tr>
+              <tr>
+                <th scope="row">참조자</th>
+                <td colspan="5">홍길동 (UK1500)/장안센터</td>
+              </tr>
+              <tr>
+                <td colspan="6" class="no_pad no_border_bottom">
+                  <div class="qna_area">
+                    <div class="q">
+                      <div class="col1">
+                        <strong>Q.</strong>
+                      </div>
+                      <div class="col2">
+                        <div class="q_type">
+                          <div class="title">
+                            <b>[문의]</b><em class="date">2016.06.15</em>
+                          </div>
+                          <div class="ctrl">
+                            <button type="button" class="btn attach" data-toggle-attach-list="attach_list_1"><i class="icon icon_clip"></i><em>첨부파일</em></button>
+                            <dl data-attach-list="attach_list_1" class="attach_list">
+                              <dt>첨부파일<button type="button" class="btn close"><i></i></button></dt>
+                              <dd><a href="javscript:;">사용기간 가이드.xls</a></dd>
+                              <dd><a href="javscript:;">자료화면.jpg</a></dd>
+                              <dd><a href="javscript:;">업무매뉴얼.ppt</a></dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <div class="q_content">
+                          <p><a href='javascript:;' style="display:inline-block;vertical-align:middle;color:#d07e18;font-family:Malgun Gothic;font-weight:bold;line-height:1.2">▶ 연관 컨텐츠 : <span style="text-decoration:underline"> 프리미엄 임대 서비스</span></a></p>
+                          <p>명의 변경하지 않았더라도 TV플러스 해지된 이력이 있으면 TV플러스 가입 년수는 원래 포함이 안되는지요?</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="row">
+        <div class="title_bar v1">
+          <div class="col1">
+            <em>처리 내용</em>
+          </div>
+        </div>
+        <table class="v2">
+          <colgroup class="width8">
+            <col class="c1">
+            <col class="c2">
+            <col class="c3">
+            <col class="c4">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row">처리상태</th>
+              <td>
+                <div class="t_auto">
+                  <div class="t_c_middle">
+                    <em class="p_status">접수(2016-06-15 14:22)</em>
+                  </div>
+                  <div class="t_c_middle align_r">
+                    <button type="button" class="btn v2 size9"><em>재문의</em></button>
+                  </div>
+                </div>
+              
+              </td>
+              <th scope="row">처리자</th>
+              <td>이철수(AB1234)/장안 센터</td>
+            </tr>
+            <tr>
+              <th scope="row">내용</th>
+              <td colspan="3">
+                <div class="qna_area no_border done">
+                  <div class="wrap_a">
+                    <div class="a">
+                      <div class="col2">
+                        <div class="a_type">
+                          <div class="a_content">
+                            <p><a href='javascript:;' style="display:inline-block;vertical-align:middle;color:#d07e18;font-family:Malgun Gothic;font-weight:bold;line-height:1.2">▶ 연관 컨텐츠 : <span style="text-decoration:underline"> 프리미엄 임대 서비스</span></a></p>
+                            <p>기본적으로 조직끼리 TV플러스 가입기간은 온가족 가입 변수에 포함되지 않습니다.<br/>예외적으로 처리될 내용은 아닙니다.<br>명의 변경과 상관없이 조직끼리 TV플러스 결합 해지 하면 사용 년수는 소멸됩니다.</p>
+                          </div>
+                          <div class="ctrl">
+                            <button type="button" class="btn attach" data-toggle-attach-list="attach_list_4"><i class="icon icon_clip"></i><em>첨부파일</em></button>
+                            <dl data-attach-list="attach_list_4" class="attach_list">
+                              <dt>첨부파일<button type="button" class="btn close"><i></i></button></dt>
+                              <dd><a href="javscript:;">사용기간 가이드.xls</a></dd>
+                              <dd><a href="javscript:;">자료화면.jpg</a></dd>
+                              <dd><a href="javscript:;">업무매뉴얼.ppt</a></dd>
+                            </dl>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <table class="v2">
+          <colgroup class="width9">
+            <col class="c1">
+            <col class="c2">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row">유용도 설문</th>
+              <td>
+                <ul class="in_list">
+                  <li>
+                    <strong>문의하신 내용에 적합한 답변이 되었습니까?</strong>
+                  </li>
+                  <li>
+                    <label class="label_radio"><input type="radio" name="r_3" checked="checked"><i></i><em>매우 그렇다</em></label>
+                    <label class="label_radio"><input type="radio" name="r_3"><i></i><em>그렇다</em></label>
+                    <label class="label_radio"><input type="radio" name="r_3"><i></i><em>보통이다</em></label>
+                    <label class="label_radio"><input type="radio" name="r_3"><i></i><em>그렇지 않다</em></label>
+                    <label class="label_radio"><input type="radio" name="r_3"><i></i><em>매우 그렇지 않다</em></label>
+                  </li>
+                  <li>
+                    <input type="text" class="size3" placeholder="추가 내용을 입력할 수 있습니다.">
+                    <em class="desc alert">*최대N자</em>
+                    <button type="button" class="btn v2 pos1"><em>설문하기</em></button>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="p_footer">
+      <button type="button" class="btn v1 big1 grey"><em>닫기</em></button>
+    </div>
+  </div>
+</section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

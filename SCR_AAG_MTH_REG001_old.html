@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN WRAP -->
+<div id="wrap" class="admin">
+  <!-- HEADER -->
+  <div id="admin_header">  
+    <div class="sta">
+      <div class="inner_wrap">
+        <div class="title">
+          <h1><a href="#"><b>MKIS</b><em>마케팅지식정보시스템</em></a></h1>
+        </div>
+        <div class="link">
+          <a href="#"><i class="icon icon_person2"></i><em>검색관리자</em></a>
+          <a href="#"><i class="icon icon_question"></i><em>도움말</em></a>
+        </div>
+      </div>
+    </div>
+    <nav class="admin_gnb">
+      <ul class="depth1">
+        <li class="on">
+          <a href="#">
+            <em>사용자 관리</em>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <em>컨텐츠 관리</em>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <em>메뉴 관리</em>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <em>시스템 관리</em>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <em>통계 관리</em>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <em>기타 관리</em>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- //HEADER -->
+  <!-- BEGIN CONTAINER -->
+  <div id="container">
+    <div class="inner_wrap">
+      <!-- SNB -->
+      <div class="admin_snb">
+        <h2><b>메뉴명</b></h2> 
+        <nav class="lnb">
+          <ul class="depth1">
+            <li class="on">
+              <a href="#">하위메뉴1</a>
+            </li>
+            <li>
+              <a href="#">하위메뉴2</a>
+            </li>
+            <li>
+              <a href="#">하위메뉴3</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- //SNB -->
+      <!-- BEGIN CONTENTS -->
+      <div id="content">
+        <section class="v1">
+          <div class="row">
+            <div class="section_title">
+              <h3>이용약관 관리</h3>
+              <div class="breadcrumb">
+                <a href="#">기타 관리</a>
+                <i></i>
+                <a href="#">이용약관 관리</a>
+                <i></i>
+                <a href="#" class="curr">SKT 기타 이용약관</a>
+              </div>
+            </div>
+            <div class="title_bar v2">
+              <div class="tit">
+                <strong></strong>
+              </div>
+              <div class="ctrl">
+                <em class="desc alert">*는 필수 입력 항목입니다.</em>
+              </div>  
+            </div>
+            <div class="list_detail_area">
+              <table class="v7">
+                <colgroup class="admin_width2">
+                  <col class="c1">
+                  <col class="c2">
+                  <col class="c3">
+                  <col class="c4">
+                </colgroup>
+                <tfoot>
+                  <tr>
+                    <td colspan="4">
+                      <button type="button" class="btn v1 red big1"><em>임시저장</em></button>
+                      <button type="button" class="btn v1 red big1"><em>등록</em></button>
+                      <button type="button" class="btn v1 big1"><em>취소</em></button>
+                    </td>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="essential">제목</th>
+                    <td colspan="3"><input type="text" class="admin_size1">
+                      <em class="desc alert">*최대50자</em></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="essential">분류</th>
+                    <td colspan="3">
+                      <em>구비서류&nbsp;&gt;&nbsp;무선&nbsp;&gt;&nbsp;가입</em>
+                      <button type="button" class="btn v2"><em>분류선택</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="essential">시행일</th>
+                    <td><input type="text" data-datepicker="true"></td>
+                    <th scope="row">Tworld게시</th>
+                    <td>
+                      <label class="label_check"><input type="checkbox" checked="checked"><i></i><em>게시</em></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="essential">탭관리</th>
+                    <td colspan="3">
+                      <div class="t_auto">
+                        <div class="t_c_middle">
+                          <input type="text" class="size2" data-mng-tab-name="true">
+                          <button type="button" class="btn v2" onclick="addTab()"><em>추가</em></button>
+                          <button type="button" class="btn v2" onclick="modifyTab()"><em>수정</em></button>
+                        </div>
+                        <!-- tab label origin template -->
+                        <li id="tab_label_tpl" data-mng-tab-label="" style="display:none">
+                          <a href="javascript:;">
+                            <em></em>
+                            <button type="button" class="btn delete"></button>
+                          </a>
+                        </li>
+                        <!-- //tab label origin template -->
+                        <div class="t_c_middle align_r">
+                          <div class="order_ctrl">
+                            <em>탭 순서 변경</em>
+                            <div class="btn_ct" data-mng-tab-order="mng_tab_group1_nav">
+                              <button type="button" class="btn prev"></button>
+                              <button type="button" class="btn next"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="essential">내용</th>
+                    <td colspan="3">
+                      <div class="toggle_area size1">
+                        <ul data-mng-tab-label-group="mng_tab_label_group1" class="tab_nav v2" data-mng-tab-order-target="mng_tab_group1_nav">
+                          <li data-mng-tab-label='{"group" : "mng_tab_group1", "status" : "on", "target" : "mng_tab_group1_1"}'>
+                            <a href="javascript:;" class="no_delete">
+                              <em>이용약관</em>
+                            </a>
+                          </li>
+                          <li data-mng-tab-label='{"group" : "mng_tab_group1", "status" : "off", "target" : "mng_tab_group1_1"}'>
+                            <a href="javascript:;">
+                              <em>요금표</em>
+                              <button type="button" class="btn delete"></button>
+                            </a>
+                          </li>
+                        </ul>
+                        <div class="editor_area">
+                          "--insert editor here--"         
+                        </div>
+                        <script type="text/javascript">
+                          var mngTab = {
+                            past: undefined, //탭이동 직전 선택된 정보가 저장되는 편수
+                            removed: undefined, //삭제된 정보가 저장되는 편수
+                            selected: undefined, //현재 정보가 저장되는 편수
+                            next: undefined,
+                            getCurrTabInfo: function () {
+                              var $this = $('[data-mng-tab-label].on'),
+                              dataObj = $this.data('mng-tab-label'),
+                              name = $this.text().trim(),
+                              tabIdx =  dataObj.target;
+
+                              return {
+                                name: name,
+                                tabIdx: tabIdx
+                              }  
+                            },
+                            getRemovedTabInfo: function($tabLabel,$target) {
+                              var $this = $tabLabel,
+                                dataObj = $this.data('mng-tab-label'),
+                                name = $this.text().trim(),
+                                tabIdx =    dataObj.target;
+
+                              this.removed = {
+                                    name: name,
+                                    tabIdx: tabIdx
+                                };
+                              
+                              if ($tabLabel.next().length) {
+                                this.selected = this.getCurrTabInfo($tabLabel.next());
+
+                                var $next = $tabLabel.next(),
+                                nextDataObj = $next.data('mng-tab-label'),
+                                nextName = $next.text().trim(),
+                                nextTabIdx =  nextDataObj.target;
+
+                                this.next = {
+                                    name: nextName,
+                                    tabIdx: nextTabIdx
+                                };
+
+                                
+
+                                $tabLabel.next().click().end().remove();
+                                $target.remove();
+                                return;
+                              } else if ($tabLabel.prev().length) {
+                                this.selected = this.getCurrTabInfo($tabLabel.prev());
+
+                                var $next = $tabLabel.prev(),
+                                nextDataObj = $next.data('mng-tab-label'),
+                                nextName = $next.text().trim(),
+                                nextTabIdx =  nextDataObj.target;
+
+                                this.next = {
+                                    name: nextName,
+                                    tabIdx: nextTabIdx
+                                };
+
+                                $tabLabel.prev().click().end().remove();
+                                $target.remove();
+                              }                                           
+                            }
+                          } 
+
+                          <!-- 기본탭 기능 -->
+                          if($('[data-mng-tab-label]').length) {
+                            $('[data-mng-tab-label]').each(function() {
+                              var $this = $(this),
+                                  dataObj = $this.data('mng-tab-label'),
+                                  $target = $('[data-mng-tab="' + dataObj.target + '"]');
+
+                              if (dataObj.status == 'on') {
+                                $this.addClass('on');
+                                $target.addClass('unhide');  
+                              }
+                            });
+
+                            $('body').on('click','[data-mng-tab-label]',function() {
+
+                              mngTab.past = mngTab.getCurrTabInfo();
+
+                              var $this = $(this),
+                                  dataObj = $this.data('mng-tab-label'),
+                                  $target = $('[data-mng-tab="' + dataObj.target + '"]');
+
+                              if($('[data-mng-tab-name]').length) {
+                                $('[data-mng-tab-name]').val($this.find('>a>em').text());
+                              }
+
+                              if ($this.hasClass('on')) { return; }
+
+                              $('[data-mng-tab-group="' + dataObj.group + '"]')
+                                .children()
+                                .removeClass('unhide');
+                              $target.addClass('unhide');
+
+                              $this
+                                .addClass('on')
+                                .siblings()
+                                .removeClass('on');
+                            });
+                          }
+
+                          if($('[data-mng-tab-order]').length) {
+                            $('[data-mng-tab-order]').each(function() {
+                              var $prev = $(this).find('.prev'),
+                                  $next = $(this).find('.next'),
+                                  $tabOrderTarget = $('[data-mng-tab-order-target="' + $(this).data('mng-tab-order') + '"]');
+
+                              $prev.on('click',function() {
+                                var $onItem = $tabOrderTarget.find('>li.on');
+                                if ($onItem.prev().length) {
+                                  $onItem.after($onItem.prev());
+                                } else {
+                                  $onItem.detach().appendTo($tabOrderTarget);
+                                }
+                              });
+                              
+                              $next.on('click',function() {
+                                var $onItem = $tabOrderTarget.find('>li.on');
+                                if ($onItem.next().length) {
+                                  $onItem.before($onItem.next());
+                                } else {
+                                  $onItem.detach().prependTo($tabOrderTarget);
+                                }
+                              });    
+                            });
+                          };
+
+                          <!-- //기본탭 기능 -->
+
+
+                          <!-- 탭생성 -->
+                          var addedTabCount = 1;
+                          var $tab_label_tpl;
+                          //var $tab_tpl;
+                          var $tab_name;
+                          function addTab() {
+
+                            $tab_label_tpl = $('#tab_label_tpl').clone();
+                            //$tab_tpl = $('#tab_tpl').clone();
+                            $tab_name = $('[data-mng-tab-name]');
+
+                            $tab_label_tpl
+                            .attr({ style: '', id: '' });
+
+                            //$tab_tpl
+                            //.attr({ style: '', id: '' });
+
+                            if ($tab_name.val()) {
+                              $tab_label_tpl.find('>a>em').text($tab_name.val());
+                              $tab_name.val('');
+                              //$tab_tpl.appendTo('[data-mng-tab-group="mng_tab_group1"]')
+                              //.wrap('<div class="tab" data-mng-tab="mng_tab_group1_new' + addedTabCount + '">');
+                              $tab_label_tpl
+                              .appendTo('[data-mng-tab-label-group="mng_tab_label_group1"]')
+                              .data('mng-tab-label',{ "group" : "mng_tab_group1", "status" : "", "target" : "mng_tab_group1_new" + addedTabCount })
+                              ;
+
+                              addedTabCount++;
+                            } else {
+                              alert('생성할 이름을 입력해 주십시요.');
+                            }
+
+                          };
+                          <!-- //탭생성 -->
+
+                          <!-- 탭수정 -->
+                          function modifyTab() {
+
+                            $tab_name = $('[data-mng-tab-name]');
+
+                            if ($tab_name.val()) {
+                              if(confirm('수정 하시겠습니까?')) {
+                                $('[data-mng-tab-label].on>a>em').text($tab_name.val());
+                                $tab_name.val('');
+                              }
+                              
+                            } else {
+                              alert('수정할 이름을 입력해 주십시요.');
+                            }
+
+                          };
+                          <!-- //탭수정 -->
+
+
+                          <!-- 탭삭제 -->
+                            $('body').on('click','[data-mng-tab-label]>a>button',function(e) {
+                              e.stopPropagation();
+                              e.preventDefault();
+
+                              var $this = $(this),
+                                  $tabLabel = $(this).closest('[data-mng-tab-label]'),
+                                  dataObj = $tabLabel.data('mng-tab-label'),
+                                  $target = $('[data-mng-tab="' + dataObj.target + '"]');
+
+                              if (!$tabLabel.siblings().length) {
+                                return;
+                              }
+                              if(confirm('삭제 하시겠습니까?')) {
+                                mngTab.getRemovedTabInfo($tabLabel,$target);
+                                  
+                              };
+
+                            });
+
+                           
+
+                          <!-- //탭삭제 -->
+                        </script>
+                      </div><!-- //toggleArea -->
+                      <ul class="desc_list size2">
+                        <li>
+                          <em class="desc alert">* T world 이외 고객접점채널에서 고객에게 바로 보여지므로, 이용약관 전문 내용 전체를 기입하시기 바랍니다.</em>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">첨부파일</th>
+                    <td colspan="3">
+                      <div class="file_upload_area">
+                        "--file upload here--"
+                      </div>
+                      <button type="button" class="btn v2"><em>파일추가</em></button>
+                      <button type="button" class="btn v2"><em>삭제</em></button>
+                      <button type="button" class="btn v2"><em>전체삭제</em></button>
+                      <ul class="desc_list size3">
+                        <li>
+                          <em class="desc alert">* T world 게시가 필요한 경우 아래 파일을 확장자 종류별로 모두 문서보안 해제 후 첨부해야 합니다.<br>
+                          &nbsp;<span style="text-decoration:underline">약관전문파일 3개(.doc, .hwp, .pdf), 별표(요금표)파일 1개(.doc)</span></em>
+                        </li>
+                        <li>
+                          <em class="desc alert">* 신구조문비교표도 첨부파일로 올려주시면 업무에 참고가 됩니다.</em>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- //CONTENTS -->
+    </div> 
+  </div>
+  <!-- //CONTAINER -->
+  <div id="footer">
+    <div class="inner_wrap">
+      <footer>
+        <h2>MKIS 정보시스템</h2>
+        <address>
+          서울특별시 중구 을지로 65(을지로 2가) SK텔레콤 빌딩&nbsp;&nbsp;|&nbsp;&nbsp;대표이사 사장 : 장동현<br>
+          Copyright ⓒ 2017 CMS.Co.Ltd. All rights reserved. 
+        </address>
+        <div class="link">
+          <!--span class="select_family">
+            <select data-select="true">
+              <option>FAMILY SITE</option>
+              <option>SITE A</option>
+              <option>SITE B</option>
+              <option>SITE C</option>
+              <option>SITE D</option>
+              <option>SITE E</option>
+            </select>
+          </span-->
+        </div>
+      </footer>
+    </div>  
+  </div>
+  <!-- //FOOTER -->
+  <!--button type="button" id="to_top" class="hide"></button-->
+</div>
+<!-- //WRAP -->
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

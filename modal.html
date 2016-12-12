@@ -1,0 +1,81 @@
+<!doctype html> 
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="user-scalable=yes, initial-scale = 1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+    <meta property="og:type" content="website" />
+    <meta name="format-detection" content="telephone=no"/>
+    
+    <!-- BEGIN GLOBAL LEVEL PLUGIN STYLES -->
+    <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+    <!-- END GLOBAL LEVEL PLUGIN STYLES -->  
+    <!-- BEGIN GLOBAL LEVEL PLUGINS -->
+    <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+    <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+    <!-- END GLOBAL LEVEL PLUGINS -->  
+    <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+    <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+    
+    <title></title>
+</head>
+
+<body>
+    <!-- BEGIN CONTAINER -->
+    <div class="container">
+        <!-- BEGIN CONTENTS -->
+        <div class="contents">
+
+        
+
+<div class="modal pwWarning" data-modal="pwWarning" data-modal-visible="true">
+    <div class="outer">
+        <div class="inner">
+            <div class="modal_header">
+                <strong>알림</strong>
+                <a href="javascript:;" class="close" data-modal-close="pwWarning">X</a>
+            </div>
+            <div class="modal_content">
+            </div>
+            <div class="modal_footer">
+                <a href="javascript:$.fn.ctrlModal('open','pwWarning2');" class="btn btn1">열기</a>
+                <a href="javascript:;" class="btn btn1" data-modal-close="pwWarning">확인</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal pwWarning" data-modal="pwWarning2">
+    <div class="outer">
+        <div class="inner">
+            <div class="modal_header">
+                <strong>알림</strong>
+                <a href="javascript:;" class="close" data-modal-close="pwWarning2">X</a>
+            </div>
+            <div class="modal_content">
+                <div style="width:880px;height:700px;display:inline-block;">
+                
+                </div>
+            </div>
+            <div class="modal_footer">
+                <a href="javascript:;" class="btn btn1" data-modal-close="pwWarning2">확인</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<!-- END CONTENTS -->    
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- END GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

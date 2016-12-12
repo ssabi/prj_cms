@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN WRAP -->
+<div id="wrap" class="sub">
+  <!-- HEADER -->
+  <div id="header">  
+    <div class="sta">
+      <div class="inner_wrap">
+        <div class="title">
+          <h1><a href="#"><b>MKIS</b><em>마케팅지식정보시스템</em></a></h1>
+        </div>
+        <div class="search_area">
+          <form>
+            <fieldset>
+            <legend>검색</legend>
+              <div class="col1">
+                <div class="t_fixed">
+                  <!-- 권한 있을 경우에만 존재 -->
+                  <div class="t_c_middle c1">
+                    <span class="select_search">
+                      <select data-select="true">
+                        <option>SKT</option>
+                        <option>SKB</option>
+                        <option>All</option>
+                      </select>
+                    </span>
+                  </div>
+                  <!-- //권한 있을 경우에만 존재 -->
+                  <div class="t_c_middle c2">
+                    <div id="divAutoCompletion" class="wrap_auto top">
+                      <input type="text" id="top_search_field" class="search_field" data-auto-complete="top" title="검색어" placeholder="검색어를 입력해주세요!">
+                      <div class="auto">
+                        <ul>
+                          <li><em><span class="matched">가입</span></em></li>
+                          <li><em>변경</em></li>
+                          <li><em>명의 변경</em></li>
+                          <li><em>맞춤</em></li>
+                          <li><em>일반 전화</em></li>
+                          <li><em><span class="matched">가입</span> 해지</em></li>
+                          <li><em>결합 상품</em></li>
+                          <li><em>기간 승계</em></li>
+                          <li><em>결합 해지</em></li>
+                        </ul>
+                        <div class="off">
+                          <a href="javascript:;" id="autoCompletionOnoff"><em>자동완성 끄기</em></a>
+                        </div>
+                      </div>
+                    </div> 
+                    <script type="text/javascript">
+					/*
+                    $(document).ready(function() {
+                      var autoCompleteTopFlag = true,
+                      autoCompleteTopIsShow = false,
+                      autoCompleteTotalFlag = true,
+                      autoCompleteTotalIsShow = false;
+  
+                      if($('[data-auto-complete]').length) {
+                        $('[data-auto-complete]').each(function() {
+                          var $this = $(this);
+                          var dataObj = $this.data('auto-complete');
+                          var $wordList = $this.parent().find('.auto');
+                          var $offBtn = $this.parent().find('.off>a');
+  
+  
+                          $this.on('focus keyup',function(e) {
+                            if(e.type == 'focus') {
+                              $('.wrap_auto .auto').hide();
+                            } 
+                            
+                            if (dataObj == 'top') {
+                              if (autoCompleteTopFlag) {
+                                if (e.type == 'keyup') {
+                                  if ($(this).val() != '') {
+                                    $wordList.show();
+                                    autoCompleteTopIsShow = true;
+                                  } else if ($(this).val() == '') {
+                                    $wordList.hide();
+                                    autoCompleteTopIsShow = false;
+                                  }
+                                } 
+                              }
+                            } else if (dataObj == 'total') {
+                              if (autoCompleteTotalFlag) {
+                                if (e.type == 'keyup') {
+                                  if ($(this).val() != '') {
+                                    $wordList.show();
+                                    autoCompleteTotalIsShow = true;
+                                  } else if ($(this).val() == '') {
+                                    $wordList.hide();
+                                    autoCompleteTotalIsShow = false;
+                                  }
+                                } 
+                              }
+                            } 
+                          });
+  
+                          $offBtn.on('click',function(e) {
+                            $wordList.hide();
+                            if (dataObj == 'top') {
+                              autoCompleteTopFlag = false;
+                              autoCompleteTopIsShow = false;   
+                            } else if (dataObj == 'total') {
+                              autoCompleteTotalFlag = false;
+                              autoCompleteTotalIsShow = false;
+                            } 
+                          });
+  
+                        });
+  
+                        $('body').on('click',function(e) {
+  
+                          if (!autoCompleteTopIsShow && !autoCompleteTotalIsShow) {
+                            return;
+                          }
+  
+                          var currAuto = '';
+  
+                          if (autoCompleteTopIsShow) {
+                            currAuto = 'top';
+                          } else if (autoCompleteTotalIsShow) {
+                            currAuto = 'total';
+                          }
+  
+                          var $this = $(this),
+                             $wordList = $this.find('.wrap_auto.' + currAuto + ' .auto'),
+                             wordListPosObj = $wordList[0].getBoundingClientRect(),
+                             nEventX = e.pageX,
+                             nEventY = e.pageY,
+                             nWordListTop = wordListPosObj.top,
+                             nWordListBottom = wordListPosObj.bottom,
+                             nWordListLeft = wordListPosObj.left,
+                             nWordListRight = wordListPosObj.right;
+  
+                          if (nEventX < nWordListLeft || nEventX > nWordListRight || nEventY < nWordListTop || nEventY > nWordListBottom) {
+  
+                            $wordList.hide();
+  
+                            if (autoCompleteTopIsShow) {
+                              autoCompleteTopIsShow = false;
+                            } else if (autoCompleteTotalIsShow) {
+                              autoCompleteTotalIsShow = false;
+                            }
+                          }
+                        });
+                      }
+                    });
+					*/
+
+					var gWordList = $('#divAutoCompletion').find('.auto');
+					var gWordListCnt = 0;
+					var gTimeoutAutoSearch;
+					var gAutoCompleteTopIsShow = false;
+					$(document).ready(function() {
+						gWordList.find('ul').empty();
+
+						if($.cookie('suggest') == 'off'){
+							$('#autoCompletionOnoff').find('em').text('자동완성 사용');
+						} else {
+							$('#autoCompletionOnoff').find('em').text('자동완성 끄기');
+						}
+
+						if($('[data-auto-complete]').length) {
+							$('body').on('click',function(e) {
+								if(e.toElement != null && e.toElement.id == 'top_search_field') { // 통합검색 텍스트박스일때 
+									if(gWordListCnt > 0) {
+										gWordList.show();
+										gAutoCompleteTopIsShow = true;
+									}
+								} else {
+									if (!gAutoCompleteTopIsShow) {
+										return;
+									}
+									var $wordList = $(this).find('.wrap_auto.top .auto'),
+									wordListPosObj = $wordList[0].getBoundingClientRect(),
+									nEventX = e.pageX,
+									nEventY = e.pageY,
+									nWordListTop = wordListPosObj.top,
+									nWordListBottom = wordListPosObj.bottom,
+									nWordListLeft = wordListPosObj.left,
+									nWordListRight = wordListPosObj.right;
+									if(nEventX < nWordListLeft || nEventX > nWordListRight || nEventY < nWordListTop || nEventY > nWordListBottom) {
+										$wordList.hide();
+										gAutoCompleteTopIsShow = false;
+									} 
+								}
+							});
+						}
+
+						// 자동완성 켜기/끄기
+						$('#autoCompletionOnoff').on('click',function(e) {
+							var sIsSuggest = "on";
+							if($(this).text().indexOf('끄기') > -1) sIsSuggest = "off";
+							$.cookie('suggest', sIsSuggest,  { expires: 365 });
+							if($.cookie('suggest') == 'off'){
+								$(this).find('em').text('자동완성 사용');
+								gWordList.find('ul').empty();
+								gWordListCnt = 0;
+							} else {
+								$(this).find('em').text('자동완성 끄기');
+							}
+						});
+
+						$('#top_search_field').on('click keyup',function(event){
+							if(event.type == 'keyup') {
+								/**
+								* 37~40 : 방향키
+								* 112 ~ 123 : F1~F12,
+								* alt : 18
+								* ctl : 17
+								* 116 : F5
+								* 27 : esc
+								*/
+								var key = event.keyCode;
+								if(key==27) { // esc
+									gWordList.hide();
+								} else if(key==38) { // 위방향키
+									//fAutoSearchSelect(obj, $(this), 'up');
+								} else if(key==40) { // 아래 방향키
+									//fAutoSearchSelect(obj, $(this), 'down');
+								} else if(key==13){ // 엔터 처리
+									/*var this_obj = $(this);
+									obj.find('li a').each(function(idx, item){
+									if($(item).css('color') == '#ff3a14') this_obj.val($(item).text());
+									});
+									wordList.hide();*/
+									$('#btnTopSearch').click();
+								} else if(key == 37 || key == 39 || key == 18 || key == 17 || (key >= 112 && key <= 123)){
+
+								} else {
+									// 자동완성 On여부
+									var isOn = gfIsOnAuthCompletion();
+									if(isOn) { 
+										gWordList.find('ul').empty();
+										gWordListCnt = 0;
+										gWordList.hide();
+
+										if(gAutoCompleteTopIsShow) {
+											gAutoCompleteTopIsShow = false;
+										}
+
+										// 자동완성 LIST 조회 
+										gfGetAutoWordList();
+									}
+								}
+							}else if(event.type == 'click') {
+								gWordList.show();
+								gAutoCompleteTopIsShow = true;
+
+								if(gfIsOnAuthCompletion()) {
+									// 자동완성 LIST 조회
+									gfGetAutoWordList();
+								}
+							}
+						});
+
+						// 통합검색 버튼 처리
+						$('#btnTopSearch').click(function(){
+							gfGoTotalSrch();
+						});
+					});
+
+					// 통합검색 
+					function gfGoTotalSrch(word) {
+						$("#totalSearchForm1").attr("method","POST");
+						$("#totalSearchForm1 > #gSrchTotalKeyword").val( !isEmpty(word)? word:$("#top_search_field").val() );
+						$("#totalSearchForm1 > #gSrchCoCl").val($("#gSrchCoClCd").val());
+						$("#totalSearchForm1 > #gSrchActPage").val('MAIN');
+						//$("#totalSearchForm1").attr("action","/front/common/totalSearchMgmtMain.do").submit();
+					}
+
+					// 자동완성 LIST 조회 
+					function gfGetAutoWordList() {
+						clearTimeout(gTimeoutAutoSearch);
+
+						if($('#top_search_field').val() != '') {
+							gWordList.find('ul').empty();
+							gWordListCnt = 0;
+
+							gTimeoutAutoSearch = setTimeout(gfGetTopAuthSearch, 100);
+						}
+					}
+
+					// 자동완성 ON상태인가
+					function gfIsOnAuthCompletion() {
+						return $('#autoCompletionOnoff').text().indexOf('사용') > -1 ? false:true;
+					}
+
+					function gfGetTopAuthSearch() {
+						// 파라미터 설정
+						//var url = '/common/getAutoCompletionWord.ajax';
+						var url = './assets/getAutoCompletionWord.json?date=201611';
+
+						var param = {keyworkd: encodeURIComponent($('#top_search_field').val())};
+
+						$.ajax({
+							url : url
+							, method : 'GET'
+							, data   : param
+							, dataType : 'json'
+							, traditional : true
+							, success: function(data){
+								//var pdata = JSON.parse(data.result);
+								var pdata = data.result;
+								var keyword = pdata.seed;
+								var rows = pdata.suggestions[0];
+								gWordListCnt = rows.length; 
+
+								for(var i in rows){
+									var curWord = (rows[i][0]);
+									//var curWordT = curWord.replaceAll(keyword,'<span class="matched">'+keyword+'</span>');
+									var curWordT = curWord.replace(/keyword/g,'<span class="matched">'+keyword+'</span>');
+
+									//$('.auto ul').append('<li><em><a href="javascript:;" onclick="$(\'#top_search_field\').val(\''+curWord+'\').focus();">'+curWordT+'</a></em></li>\n');
+									$('#divAutoCompletion .auto ul').append('<li><em><a href="javascript:;" onclick="$(\'#top_search_field\').val(\''+curWord+'\').focus();">'+curWordT+'</a></em></li>\n');
+								}
+
+								if(rows.length > 0) {
+									gWordList.show();
+
+									if(!gAutoCompleteTopIsShow) {
+										gAutoCompleteTopIsShow = true;
+									}
+								}
+							}, error : function( jqXHR, textStatus, errorThrown ){
+								//AjaxError(jqXHR, textStatus, errorThrown, "");
+							}
+						});
+					}
+                    </script>
+                  </div>
+                </div>
+              </div>
+              <div class="col2">
+                <button type="button" class="btn search" id="btnTopSearch"><i class="icon icon_search"><em>검색</em></i></button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="link">
+          <a href="#"><i class="icon icon_person"></i><em>관리자</em></a>
+          <a href="javascript:;" data-modal-label="total_menu"><i class="icon icon_menu"></i><em>전체메뉴</em></a>
+          <div class="modal total_menu" data-modal="total_menu">
+            <div class="outer">
+              <div class="inner">
+                <a href="javascript:;" class="close" data-modal-close="total_menu"><i></i></a>
+                <div class="modal_container">
+                  <div class="modal_header">
+                    <div class="mh_row">
+                      <div class="col1">
+                        <strong>전체메뉴</strong>
+                      </div>
+                      <div class="col2">
+                        <button type="button" class="btn v1 big grey"><em>My메뉴</em></button>
+                        <button type="button" class="btn v1 big grey"><em>통합검색</em></button>
+                        <button type="button" class="btn v1 big grey"><em>도움말</em></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal_content">
+                    <div class="mc_row">
+                      <table class="v10">
+                        <colgroup class="width1">
+                          <col class="c1">
+                          <col class="c2">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">업무매뉴얼</th>
+                            <td>
+                              <div class="menu_link_area">
+                                <a href="#" class="on"><em>업무 프로세스</em></a>
+                                <a href="#"><em>고객응대</em></a>
+                                <a href="#"><em>홈페이지 안내</em></a>
+                                <a href="#"><em>ISAC업무 응대</em></a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">상품매뉴얼</th>
+                            <td>
+                              <div class="menu_link_area">
+                                <a href="#"><em>이동전화</em></a>
+                                <a href="#"><em>Wibro</em></a>
+                                <a href="#"><em>인터넷</em></a>
+                                <a href="#"><em>기업데이터</em></a>
+                                <a href="#"><em>전화</em></a>
+                                <a href="#"><em>기업전화</em></a>
+                                <a href="#"><em>APP</em></a>
+                                <a href="#"><em>기업IDC</em></a>
+                                <a href="#"><em>기업Managed</em></a>
+                                <a href="#"><em>패키지</em></a>
+                                <a href="#"><em>통합상품</em></a>
+                                <a href="#"><em>H/W판매</em></a>
+                                <a href="#"><em>기업솔루션</em></a>
+                                <a href="#"><em>특수 서비스</em></a>
+                                <a href="#"><em>SKT 플랫폼 상품</em></a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">전문상담</th>
+                            <td>
+                              <div class="menu_link_area">
+                                <a href="#"><em>통화품질</em></a>
+                                <a href="#"><em>I/B실</em></a>
+                                <a href="#"><em>로밍</em></a>
+                                <a href="#"><em>메론</em></a>
+                                <a href="#"><em>사이버</em></a>
+                                <a href="#"><em>법인</em></a>
+                                <a href="#"><em>솔루션</em></a>
+                                <a href="#"><em>플랫폼실</em></a>
+                                <a href="#"><em>가맹점</em></a>
+                                <a href="#"><em>번호이동</em></a>
+                                <a href="#"><em>전화해지</em></a>
+                                <a href="#"><em>Tworld direct</em></a>
+                                <a href="#"><em>Tmap</em></a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">전문상담</th>
+                            <td>
+                              <div class="menu_link_area">
+                                <a href="#"><em>무선</em></a>
+                                <a href="#"><em>유선</em></a>
+                                <a href="#"><em>기업</em></a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">기술상담</th>
+                            <td>
+                              <div class="menu_link_area">
+                                <a href="#"><em>기술상담</em></a>
+                                <a href="#"><em>프로세스</em></a>
+                                <a href="#"><em>인터넷</em></a>
+                                <a href="#"><em>전화</em></a>
+                                <a href="#"><em>TV</em></a>
+                                <a href="#"><em>진단툴</em></a>
+                                <a href="#"><em>기술지원</em></a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">공지사항</th>
+                            <td>
+                              <div class="menu_link_area">
+                                <a href="#"><em>실시간 업무</em></a>
+                                <a href="#"><em>SMS/MMS</em></a>
+                                <a href="#"><em>언론보도</em></a>
+                                <a href="#"><em>오류/작업/업데이트</em></a>
+                                <a href="#"><em>이벤트</em></a>
+                                <a href="#"><em>주요공지</em></a>
+                                <a href="#"><em>ISAC공지</em></a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">질문마당</th>
+                            <td>
+                              <div class="menu_link_area">
+                                <a href="#"><em>묻고 답하기</em></a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">공통</th>
+                            <td>
+                              <div class="menu_link_area">
+                                <a href="#"><em>SKT소개</em></a>
+                                <a href="#"><em>제도/약관</em></a>
+                                <a href="#"><em>서비스 개요</em></a>
+                                <a href="#"><em>교육자료</em></a>
+                                <a href="#"><em>자료실</em></a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">세일즈 컨텐츠</th>
+                            <td>
+                              <div class="menu_link_area">
+                                <a href="#"><em>세일즈톡</em></a>
+                                <a href="#"><em>T만의 혜택</em></a>
+                                <a href="#"><em>디지털 톡</em></a>
+                                <a href="#"><em>꿀팁</em></a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">B Smart</th>
+                            <td>
+                              <div class="menu_link_area">
+                                <a href="#"><em>초고속</em></a>
+                                <a href="#"><em>전화</em></a>
+                                <a href="#"><em>TV</em></a>
+                                <a href="#"><em>부가서비스</em></a>
+                                <a href="#"><em>FAQ</em></a>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal_footer"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="gnb" data-menu="gnb">
+      <ul class="depth1">
+        <li class="on">
+          <a href="javascript:;">
+            <em>업무매뉴얼</em>
+          </a>
+          <div class="depth2">
+            <div class="back"><div class="white"></div></div>
+            <ul>
+              <li>
+                <dl class="depth3">
+                  <dt><a href="#">업무프로세스</a></dt>
+                  <dd><a href="#">가입/변경/해지</a></dd>
+                  <dd><a href="#">빌링</a></dd>
+                  <dd><a href="#">할인제도</a></dd>
+                  <dd><a href="#">멤버쉽/포인트</a></dd>
+                  <dd><a href="#">계약서심사(CIA)</a></dd>
+                </dl>   
+                <dl class="depth3">
+                  <dt><a href="#">고객응대</a></dt>
+                  <dd><a href="#">고객상담</a></dd>
+                  <dd><a href="#">통화품질</a></dd>
+                  <dd><a href="#">개인정보(열람)</a></dd>
+                  <dd><a href="#">단말기A/S</a></dd>
+                  <dd><a href="#">법인/기업/M2M</a></dd>
+                  <dd><a href="#">캠페인 스크립트(TM)</a></dd>                
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">홈페이지 안내</a></dt>
+                  <dd><a href="#">T world</a></dd>
+                  <dd><a href="#">SK 브로드밴드</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <em>상품매뉴얼</em>
+          </a>
+          <div class="depth2">
+            <div class="back"><div class="white"></div></div>
+            <ul>
+              <li>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">부가서비스</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">Wibro</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">부가서비스</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">인터넷</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">부가서비스</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">기업데이터</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">부가서비스</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">부가서비스</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">기업전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">부가서비스</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">옥수수</a></dt>
+                  <dd><a href="#">개요/지침</a></dd>
+                  <dd><a href="#">구매/빌링</a></dd>
+                  <dd><a href="#">이용매뉴얼</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">TV</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">부가서비스</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">비회선</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">부가서비스</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">App</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">부가서비스</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">기업IDC</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">기업Managed</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">결합상품</a></dt>
+                  <dd><a href="#">TB결합</a></dd>
+                  <dd><a href="#">세트</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">패키지</a></dt>
+                  <dd><a href="#">패키지</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">통합상품</a></dt>
+                  <dd><a href="#"></a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">H/W판매</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">기업솔루션</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">특수서비스</a></dt>
+                  <dd><a href="#"></a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">SKT 플랫폼 상품</a></dt>
+                  <dd><a href="#">패키지</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <em>전문상담</em>
+          </a>
+          <div class="depth2">
+            <div class="back"><div class="white"></div></div>
+            <ul>
+              <li>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <em>구비서류</em>
+          </a>
+          <div class="depth2">
+            <div class="back"><div class="white"></div></div>
+            <ul>
+              <li>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <em>기술상담</em>
+          </a>
+          <div class="depth2">
+            <div class="back"><div class="white"></div></div>
+            <ul>
+              <li>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <em>공지사항</em>
+          </a>
+          <div class="depth2">
+            <div class="back"><div class="white"></div></div>
+            <ul>
+              <li>
+                <dl class="depth3">
+                  <dt><a href="#">PLM 접점/상품/로밍뉴스</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <em>질문마당</em>
+          </a>
+          <div class="depth2">
+            <div class="back"><div class="white"></div></div>
+            <ul>
+              <li>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <em>공통</em>
+          </a>
+          <div class="depth2">
+            <div class="back"><div class="white"></div></div>
+            <ul>
+              <li>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <em>세일즈컨텐츠</em>
+          </a>
+          <div class="depth2">
+            <div class="back"><div class="white"></div></div>
+            <ul>
+              <li>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>  
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <em>B Smart</em>
+          </a>
+          <div class="depth2">
+            <div class="back"><div class="white"></div></div>
+            <ul>
+              <li>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+                <dl class="depth3">
+                  <dt><a href="#">이동전화</a></dt>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                  <dd><a href="#">요금제</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- //HEADER -->
+  <!-- BEGIN CONTAINER -->
+  <div id="container">
+    <div class="inner_wrap">
+      <!-- BEGIN CONTENTS -->
+      <div id="content">
+        <section class="v1">
+          <div class="row">
+            <div class="section_title">
+              <h3>통합검색</h3>
+              <!-- div class="breadcrumb">
+                <a href="#">통합검색</a>
+                <i></i>
+                <a href="#" class="curr">전체</a>
+              </div-->
+            </div>
+            <div class="total_search">   
+              <div class="ts_row">
+                <div class="field">
+                  <div class="col1">
+                    <div class="field_bar wrap_auto total">
+                      <input type="text" data-auto-complete="total" title="검색어" placeholder="검색어를 입력해주세요!">
+                      <button type="button" class="btn search2"><i></i></button>
+                      <div class="auto">
+                        <ul>
+                          <li><em>최근 검색어가 없습니다.</em></li>
+                        </ul>
+                        <div class="off">
+                          <a href="javascript:;"><em>자동완성 끄기</em></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col2">
+                    <label class="label_check"><input type="checkbox"><i></i><em>결과 내 재검색</em></label>
+                  </div>
+                </div>
+              </div>
+              <div class="ts_row">
+                <div class="similar">
+                  <div class="col1">
+                    <b>유사검색어</b>
+                  </div>
+                  <div class="col2">
+                    <div class="toggle_link_area" data-link-list="similar_words">
+                      <a href="#"><em>일반전화</em></a>
+                      <a href="#"><em>일반 가입전화</em></a>
+                      <a href="#"><em>유선전화</em></a>
+                      <a href="#"><em>신규가입</em></a>
+                      <a href="#"><em>일반전화</em></a>
+                      <a href="#"><em>일반 가입전화</em></a>
+                      <a href="#"><em>유선전화</em></a>
+                      <a href="#"><em>신규가입</em></a>
+                      <a href="#"><em>일반전화</em></a>
+                      <a href="#"><em>일반 가입전화</em></a>
+                      <a href="#"><em>유선전화</em></a>
+                      <a href="#"><em>신규가입</em></a>
+                      <a href="#"><em>일반전화</em></a>
+                      <a href="#"><em>일반 가입전화</em></a>
+                      <a href="#"><em>유선전화</em></a>
+                      <a href="#"><em>신규가입</em></a>
+                    </div>
+                  </div>
+                  <div class="col3">
+                    <button type="button" class="btn toggle2" data-toggle-link-list="similar_words"><i></i><em class="extend_msg">더보기</em><em class="collapse_msg">접기</em></button>
+                  </div>
+                </div>
+              </div>
+              <div class="ts_row">
+                <div class="condition_area">
+                  <div class="ca_row">
+                    <div class="bar">
+                      <div class="col1">
+                        <b>검색범위</b>
+                      </div>
+                      <div class="col2">
+                        <label class="label_check"><input type="checkbox" checked="checked"><i></i><em>전체</em></label>
+                        <label class="label_check"><input type="checkbox"><i></i><em>제목</em></label>
+                        <label class="label_check"><input type="checkbox"><i></i><em>본문</em></label>
+                        <label class="label_check"><input type="checkbox"><i></i><em>첨부파일</em></label>
+                      </div>
+                    </div>
+                    <div class="bar">
+                      <div class="col1">
+                        <b>검색메뉴</b>
+                      </div>
+                      <div class="col2">
+                        <label class="label_check"><input type="checkbox" checked="checked"><i></i><em>업무매뉴얼</em></label>
+                        <label class="label_check"><input type="checkbox"><i></i><em>상품매뉴얼</em></label>
+                        <label class="label_check"><input type="checkbox"><i></i><em>전문상담</em></label>
+                        <label class="label_check"><input type="checkbox"><i></i><em>구비서류</em></label>
+                        <label class="label_check"><input type="checkbox"><i></i><em>기술상담</em></label>
+                        <label class="label_check"><input type="checkbox"><i></i><em>공지사항</em></label>
+                        <label class="label_check"><input type="checkbox"><i></i><em>질문마당</em></label>
+                        <label class="label_check"><input type="checkbox"><i></i><em>공통</em></label>
+                        <label class="label_check"><input type="checkbox"><i></i><em>세일즈 컨텐츠</em></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="count_bar">
+              <div class="col1">
+                <strong>검색 결과가 <span class="count">0</span>건 있습니다.</strong>
+              </div>
+              <div class="col2">
+                <span class="select width10">
+                  <select data-select="true">
+                    <option>조회순+정확도</option>
+                    <option>조회순</option>
+                    <option>최신순</option>
+                    <option selected="selected">정확도</option>
+                  </select>
+                </span>
+                <span class="select">
+                  <select data-select="true">
+                    <option>15개씩</option>
+                    <option>15개씩</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <ul class="tab_nav v3">
+              <li class="on">
+                <a href="javascript:;">
+                  <em>통합<br>(20)</em>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <em>업무매뉴얼<br>(20)</em>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <em>상품매뉴얼<br>(20)</em>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <em>전문상담<br>(20)</em>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <em>구비서류<br>(20)</em>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <em>기술상담<br>(20)</em>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <em>공지사항<br>(20)</em>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <em>질문마당<br>(20)</em>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <em>공통<br>(20)</em>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <em>세일즈컨텐츠<br>(20)</em>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <em>ISAC<br>(20)</em>
+                </a>
+              </li>
+            </ul>
+            <div class="search_result">
+              <div class="sr_row">
+                <div class="sr_title_bar">
+                  <div class="col1">
+                    <strong>업무매뉴얼</strong>
+                    <em class="count">검색결과(<span>23</span>건)</em>
+                    <button type="button" class="btn move2"><em>메뉴이동</em><i></i></button>
+                  </div>
+                  <div class="col2">
+                    <a href="#" class="more"><em>더보기</em><i></i></a>
+                  </div>
+                </div>
+                <div class="sr_item">
+                  <div class="title">
+                    <a href="#"><b>[SKT/무선] 전화 업무처리 지침 일부 변경→온가족 계열 가입기간 외</b><em class="date">2016.08.01</em></a>
+                  </div>
+                  <div class="content">열람계열 <span class="matched">가입</span>일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요</div>
+                  <div class="util">
+                    <div class="col1">
+                      <div class="page_path">
+                        <em>업무매뉴얼</em>
+                        <i></i>
+                        <em>업무프로세스</em>
+                        <i></i>
+                        <em class="curr">가입/변경/해지</em>
+                      </div>
+                    </div>
+                    <div class="col2">
+                      <button type="button" class="btn toggle3" data-toggle-label="sr1_item1"><i></i><em class="extend_msg">펼쳐보기</em><em class="collapse_msg">닫기</em></button>
+                    </div>
+                  </div>
+                  <div class="detail" data-toggle-target="sr1_item1">
+                    <iframe src="iframe2.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="yes"></iframe>
+                  </div>
+                </div>
+                <div class="sr_item">
+                  <div class="title">
+                    <a href="#"><b>[SKT/무선] 전화 업무처리 지침 일부 변경→온가족 계열 가입기간 외</b><em class="date">2016.08.01</em></a>
+                  </div>
+                  <div class="content">열람계열 <span class="matched">가입</span>일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요</div>
+                  <div class="util">
+                    <div class="col1">
+                      <div class="page_path">
+                        <em>업무매뉴얼</em>
+                        <i></i>
+                        <em>업무프로세스</em>
+                        <i></i>
+                        <em class="curr">가입/변경/해지</em>
+                      </div>
+                    </div>
+                    <div class="col2">
+                      <button type="button" class="btn toggle3" data-toggle-label="sr1_item2"><i></i><em class="extend_msg">펼쳐보기</em><em class="collapse_msg">닫기</em></button>
+                    </div>
+                  </div>
+                  <div class="detail" data-toggle-target="sr1_item2">
+                    <iframe src="iframe2.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="yes"></iframe>
+                  </div>
+                </div>
+              </div>
+              <div class="sr_row">
+                <div class="sr_title_bar">
+                  <div class="col1">
+                    <strong>상품매뉴얼</strong>
+                    <em class="count">검색결과(<span>11</span>건)</em>
+                    <button type="button" class="btn move2"><em>메뉴이동</em><i></i></button>
+                  </div>
+                  <div class="col2">
+                    <a href="#" class="more"><em>더보기</em><i></i></a>
+                  </div>
+                </div>
+                <div class="sr_item">
+                  <div class="title">
+                    <a href="#"><b>[SKT/무선] 전화 업무처리 지침 일부 변경→온가족 계열 가입기간 외</b><em class="date">2016.08.01</em></a>
+                  </div>
+                  <div class="content">열람계열 <span class="matched">가입</span>일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요</div>
+                  <div class="util">
+                    <div class="col1">
+                      <div class="page_path">
+                        <em>업무매뉴얼</em>
+                        <i></i>
+                        <em>업무프로세스</em>
+                        <i></i>
+                        <em class="curr">가입/변경/해지</em>
+                      </div>
+                    </div>
+                    <div class="col2">
+                      <button type="button" class="btn toggle3" data-toggle-label="sr2_item1"><i></i><em class="extend_msg">펼쳐보기</em><em class="collapse_msg">닫기</em></button>
+                    </div>
+                  </div>
+                  <div class="detail" data-toggle-target="sr2_item1">
+                    <iframe src="iframe2.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="yes"></iframe>
+                  </div>
+                </div>
+                <div class="sr_item">
+                  <div class="title">
+                    <a href="#"><b>[SKT/무선] 전화 업무처리 지침 일부 변경→온가족 계열 가입기간 외</b><em class="date">2016.08.01</em></a>
+                  </div>
+                  <div class="content">열람계열 <span class="matched">가입</span>일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요일(개통일)/해지일/업무처리 완료 여부/업무처리한 영업장 안내에서 업무처리완료 여부 확인 필요</div>
+                  <div class="util">
+                    <div class="col1">
+                      <div class="page_path">
+                        <em>업무매뉴얼</em>
+                        <i></i>
+                        <em>업무프로세스</em>
+                        <i></i>
+                        <em class="curr">가입/변경/해지</em>
+                      </div>
+                    </div>
+                    <div class="col2">
+                      <button type="button" class="btn toggle3" data-toggle-label="sr2_item2"><i></i><em class="extend_msg">펼쳐보기</em><em class="collapse_msg">닫기</em></button>
+                    </div>
+                  </div>
+                  <div class="detail" data-toggle-target="sr2_item2">
+                    <iframe src="iframe2.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="yes"></iframe>
+                  </div>
+                </div>
+              </div>
+              <div class="paginate">
+                <!-- 비활성화시 .disabled 추가 -->
+                <a href="javascript:;" class="ctrl start" title="처음"><i></i></a>
+                <a href="javascript:;" class="ctrl prev" title="이전"><i></i></a>
+                <span class="pages">
+                  <a href="javascript:;">1</a>
+                  <a href="javascript:;">2</a>
+                  <a href="javascript:;">3</a>
+                  <a href="javascript:;">4</a>
+                  <a href="javascript:;">5</a>
+                  <a href="javascript:;">6</a>
+                  <a href="javascript:;">7</a>
+                  <a href="javascript:;">8</a>
+                  <a href="javascript:;">9</a>
+                  <a href="javascript:;" class="curr">10</a>
+                </span>
+                <a href="javascript:;" class="ctrl next" title="다음"><i></i></a>
+                <a href="javascript:;" class="ctrl end" title="끝"><i></i></a>
+                <!-- 비활성화시 .disabled 추가 -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- //CONTENTS -->
+      <div class="aside">
+        <div class="rnb">
+          <div class="summary">
+            <button type="button" data-toggle-rnb="true"><i class="icon icon_rnb_menu"></i></button>
+            <button type="button" data-toggle-rnb="true"><i class="icon icon_rnb_list"></i></button>
+            <button type="button"><i class="icon icon_rnb_star"></i></button>
+            <button type="button"><i class="icon icon_rnb_gear"></i></button>
+            <button type="button" data-toggle-rnb="true"><i class="icon icon_rnb_watch"></i></button>
+            <button type="button" data-toggle-rnb="true"><i class="icon icon_rnb_search"></i></button>
+          </div>
+          <div class="detail">
+            <div class="title">
+              <strong>
+                <i class="icon icon_contents"></i>
+                <b>My Contents</b>
+                <button type="button" data-toggle-rnb="true"><em>닫기</em><i class="icon icon_arrow_v1_right"></i></button>
+              </strong>
+            </div>
+            <div class="parts">
+              <div class="status_area">
+                <div class="status_row">
+                  <a href="javascript:;" class="status col1">
+                    <i class="ongoing_request"><em class="num">3</em></i>
+                    <em class="name">진행중 요청</em>
+                  </a>
+                  <a href="javascript:;" class="status col2">
+                    <i class="done_request"><em class="num">2</em></i>
+                    <em class="name">완료된 요청</em>
+                  </a>
+                </div>
+                <div class="status_row">
+                  <a href="javascript:;" class="status col1">
+                    <i class="ongoing_ask"><em class="num">7</em></i>
+                    <em class="name">진행중 질문</em>
+                  </a>
+                  <a href="javascript:;" class="status col2">
+                    <i class="done_ask"><em class="num">99</em></i> 
+                    <em class="name">답변된 질문</em>
+                  </a>
+                </div>
+              </div>
+              <div class="my_menu">
+                <strong>My 메뉴</strong>
+                <ul>
+                  <li><a href="#">즐겨찾기</a></li>
+                  <li><a href="#">통합검색 설정</a></li>
+                </ul>
+              </div>
+              <div class="my_contents">
+                <strong>내가 본 컨텐츠</strong>
+                <!-- div class="no_contents_data"><div class="msg">최근에<br>열람한 컨텐츠가 없습니다.</div></div-->
+                <div class="slide_list" data-slide="v1">
+                  <div class="slide">
+                    <ul>
+                      <li><a href="#">프리미엄 임대 서비스</a></li>
+                      <li><a href="#">단골 고객관리</a></li>
+                      <li><a href="#">명의변경관리</a></li>
+                      <li><a href="#">선택 약정 할인 제도</a></li>
+                      <li><a href="#">업무 이관 프로세스</a></li>
+                    </ul>
+                  </div>
+                  <div class="slide">
+                    <ul>
+                      <li><a href="#">프리미엄 임대 서비스2</a></li>
+                      <li><a href="#">단골 고객관리2</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="hot_contents">
+                <strong>인기 컨텐츠</strong>
+                <div class="no_contents_data"><div class="msg">등록된<br>인기 컨텐츠가 없습니다.</div></div>
+                <!-- div class="slide_list" data-slide="v1">
+                  <div class="slide">
+                    <ul>
+                      <li><a href="#">프리미엄 임대 서비스프리미엄 임대 서비스프리미엄 임대 서비스프리미엄 임대 서비스프리미엄 임대 서비스</a></li>
+                      <li><a href="#">단골 고객관리</a></li>
+                      <li><a href="#">명의변경관리</a></li>
+                      <li><a href="#">선택 약정 할인 제도</a></li>
+                      <li><a href="#">업무 이관 프로세스</a></li>
+                    </ul>
+                  </div>
+                  <div class="slide">
+                    <ul>
+                      <li><a href="#">프리미엄 임대 서비스2</a></li>
+                      <li><a href="#">단골 고객관리2</a></li>
+                    </ul>
+                  </div>
+                </div-->
+              </div>
+              <aside>
+                <ul>
+                  <li>
+                    <a href="#">도움말</a>
+                  </li>
+                  <li>
+                    <a href="#">영업장 안내</a>
+                  </li>
+                  <li>
+                    <a href="#">서식지</a>
+                  </li>
+                  <li>
+                    <a href="#">VR</a>
+                  </li>
+                </ul>
+              </aside>
+            </div>
+          </div>
+        </div>
+        <button type="button" id="to_top" class="hide"></button>
+      </div>
+    </div> 
+  </div>
+  <!-- //CONTAINER -->
+  <div id="footer">
+    <div class="inner_wrap">
+      <footer>
+        <h2>MKIS 정보시스템</h2>
+        <address>
+          서울특별시 중구 을지로 65(을지로 2가) SK텔레콤 빌딩&nbsp;&nbsp;|&nbsp;&nbsp;대표이사 사장 : 장동현<br>
+          Copyright ⓒ 2017 CMS.Co.Ltd. All rights reserved. 
+        </address>
+        <div class="link">
+          <span class="select_family">
+            <select data-select="true">
+              <option disabled="disabled" selected="selected" class="default">FAMILY SITE</option>
+              <optgroup label="SK관련사이트">
+                <option value="">T World</option>
+                <option value="">SK브로드밴드 사이트</option>
+                <option value="">B tv 사이트</option>
+                <option value="">멜론 홈페이지</option>
+                <option value="">OK캐쉬백 홈페이지</option>
+                <option value="">NATE영화 홈페이지</option>
+              </optgroup>
+              <optgroup label="AS센터">
+                <option value="">팬텍&큐리텔 AS센터 안내</option>
+                <option value="">모토로라 AS센터 안내</option>
+                <option value="">삼성전자 AS센터 안내</option>
+                <option value="">LG전자 AS센터안내</option>
+              </optgroup>
+            </select>
+          </span>
+        </div>
+      </footer>
+    </div>  
+  </div>
+  <!-- //FOOTER -->
+</div>
+<!-- //WRAP -->
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+
+<form id="totalSearchForm1">
+	<input type="hidden" name="gSrchTotalKeyword" id="gSrchTotalKeyword" value="" />
+	<input type="hidden" name="gSrchCoCl" id="gSrchCoCl" value="" />
+	<input type="hidden" name="gSrchActPage" id="gSrchActPage" value="" />
+</form>
+
+</body> 
+</html>

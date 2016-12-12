@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="ko" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="ko" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="ko">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>GUIDE</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- GLOBAL LEVEL PLUGIN STYLES -->
+<link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+<!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+<!-- GLOBAL LEVEL PLUGINS -->
+<script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+<script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+<script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+<script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+<script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+<!-- //GLOBAL LEVEL PLUGINS -->
+<link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css"/>
+<title>Publisher Guide</title>
+</head>
+<body>
+<style type="text/css">
+  html,body {height:auto;}
+  body {background-color:#f9f9f9;padding:40px 0 60px;}
+  .pg_ct {width:960px;margin:0 auto;padding:20px;border-radius:10px;background-color:#fff;overflow:hidden;box-shadow:rgba(0,0,0,0.3)}
+  .pg_contents {float:left;width:720px;border-radius:10px 0 0 10px}
+  .pg_ct nav {float:left;width:160px;border-radius:0 10px 10px 0}
+  .pg_ct nav ul {position:fixed;top:60px;}
+  .pg_ct nav li {padding-left:20px;margin-bottom:20px;}
+  .pg_section {margin-bottom:30px;}
+  .pg_section h3 {font-size:13px;}
+  .pg_section .row_box {padding:10px;border:1px dashed #ccc}
+  .pg_section .row_box + .row_box {margin-top:10px;}
+  h1 {font-size:24px;margin-bottom:30px;font-weight:normal;}
+  h2 {font-size:16px;color:#555;margin-bottom:10px;font-weight:normal;}
+  h3 {font-size:13px;margin-bottom:30px;font-weight:normal;}
+  table.pg_type1 {width:100%;text-align:left;vertical-align:middle;font-size:12px}
+  table.pg_type1>tbody>tr:nth-of-type(odd) {background-color:#f9f9f9;}
+  table.pg_type1 thead th {padding:8px;border:1px solid #bbb;text-align:center;}
+  table.pg_type1 tbody th,
+  table.pg_type1 tbody td {padding:8px;border:1px solid #ddd}
+  table.pg_type1t tbody th.header {background-color:#fff;text-align:center}
+</style>
+<div id="pg_ct" class="pg_ct">
+    <div class="pg_contents">
+        <h1>퍼블리셔 가이드</h1>
+        <div class="pg_section">
+            <h2 id="specification">Specification</h2>
+            <table class="pg_type1">
+                <colgroup>
+                    <col style="width:200px;"/>
+                    <col style=""/>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Layer</th>
+                        <th>Version</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML</td>
+                        <td>HTML5</td>
+                    </tr>
+                    <tr>
+                        <td>CSS</td>
+                        <td>CSS3</td>
+                    </tr>
+                    <tr>
+                        <td>JS</td>
+                        <td>ES5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pg_section">
+            <h2 id="folders">폴더구조</h2>
+            <table class="pg_type1">
+                <colgroup>
+                    <col style="width:200px;"/>
+                    <col style=""/>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>경로</th>
+                        <th>하위경로</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      <td>.public/dist/</td>
+                      <td>/</td>
+                      <td>퍼블리싱 루트디렉토리</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/lib</td>
+                      <td>/</td>
+                      <td>라이브러리 폴더</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/lib</td>
+                      <td>/slick</td>
+                      <td>slider 플러그인</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/lib</td>
+                      <td>/modernizr</td>
+                      <td>html5shiv/Polyfill 용</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/lib</td>
+                      <td>/jstree</td>
+                      <td>Tree UI 플러그인</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/lib</td>
+                      <td>/jquery</td>
+                      <td>jQuery</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/lib</td>
+                      <td>/jquery-ui</td>
+                      <td>calendar 관련</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/js</td>
+                      <td>/</td>
+                      <td>UI 핸들링 javascript 로직</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/img</td>
+                      <td>/</td>
+                      <td>이미지 폴더</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/img</td>
+                      <td>/loading</td>
+                      <td>ajax 화면 블럭용 로딩이미지</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/img</td>
+                      <td>/jstree</td>
+                      <td>jstree 관련 이미지</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/img</td>
+                      <td>/icon</td>
+                      <td>아이콘 이미지 모음</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/img</td>
+                      <td>/form</td>
+                      <td>체크박스, 라디오 등 폼요소 관련</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/img</td>
+                      <td>/bg</td>
+                      <td>배경이미지 모음</td>
+                  </tr>
+                  <tr>
+                      <td>.public/dist/assets/css</td>
+                      <td>/</td>
+                      <td>css 파일</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pg_section">
+            <h2 id="link_tag">연관문서 링크 태그</h2>
+            <table class="pg_type1">
+                <colgroup>
+                    <col style="width:50%;"/>
+                    <col style=""/>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>형상</th>
+                        <th>태그</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-size:13px">
+                          <p><a href='javascript:;' style="display:inline-block;vertical-align:middle;color:#d07e18;font-family:Malgun Gothic;font-weight:bold;line-height:1.2">▶ 연관 컨텐츠 : <span style="text-decoration:underline"> 프리미엄 임대 서비스</span></a><button type="button" class="btn delete"></button></p>
+                        </td>
+                        <td style="overflow:hidden;">
+                          <xmp style="font-size:12px;white-space:normal;">
+                            <!-- 태그시작 -->
+                            <p><a href='javascript:;' style="display:inline-block;vertical-align:middle;color:#d07e18;font-family:Malgun Gothic;font-weight:bold;line-height:1.2">▶ 연관 컨텐츠 : <span style="text-decoration:underline"> 프리미엄 임대 서비스</span></a><button type="button" class="btn delete"></button></p>
+                            <!-- 태그끝 -->
+                          </xmp>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pg_section">
+            <h2 id="labels">라벨</h2>
+            <table class="pg_type1">
+                <colgroup>
+                    <col style="width:150px;"/>
+                    <col style="width:150px;"/>
+                    <col style=""/>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>선택자</th>
+                        <th>종류</th>
+                        <th>형상</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <th class="header">span.label.v1</th>
+                      <td>신규</td>
+                      <td>
+                        <span class="label v1"><em>신규</em></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="header">span.label.v2</th>
+                      <td>중요</td>
+                      <td>
+                        <span class="label v2"><em>중요</em></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="header">span.label.v3</th>
+                      <td>잠금 아이콘</td>
+                      <td style="padding-left:30px">
+                        <span class="label v3"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="header">span.label2.v1</th>
+                      <td>신규</td>
+                      <td>
+                        <span class="label2 v1"><em>신규</em></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="header">span.label2.v2</th>
+                      <td>변경</td>
+                      <td>
+                        <span class="label2 v2"><em>변경</em></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="header">span.label3.v1</th>
+                      <td>강조</td>
+                      <td>
+                        <span class="label3 v1"><em>1</em></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="header">span.label3.v2</th>
+                      <td>일반</td>
+                      <td>
+                        <span class="label3 v2"><em>2</em></span>
+                      </td>
+                    </tr>
+                </tbody> 
+            </table>
+        </div>
+        <div class="pg_section">
+            <h2 id="buttons">버튼</h2>
+            <table class="pg_type1">
+                <colgroup>
+                    <col style="width:150px;"/>
+                    <col style="width:150px;"/>
+                    <col style=""/>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>선택자</th>
+                        <th>종류</th>
+                        <th>형상</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="header">.btn.v1</th>
+                    <td>일반</td>
+                    <td>
+                      <button class="btn v1" type="button"><em>버튼명</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.v1.grey</th>
+                    <td>일반(dim)</td>
+                    <td>
+                      <button class="btn v1 grey" type="button"><em>버튼명</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.v1.red</th>
+                    <td>일반(강조)</td>
+                    <td>
+                      <button class="btn v1 red" type="button"><em>버튼명</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.v1.big1</th>
+                    <td>일반(높이30px)</td>
+                    <td>
+                      <button class="btn v1 big1" type="button"><em>버튼명</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.v2</th>
+                    <td>일반2</td>
+                    <td>
+                      <button class="btn v2" type="button"><em>버튼명</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header"></th>
+                    <td>선택초기화</td>
+                    <td>
+                      <button type="button" class="btn v2 size3"><i class="icon icon_initialize"></i><em>선택 초기화</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header"></th>
+                    <td>순서저장</td>
+                    <td>
+                      <button type="button" class="btn v2 fs1"><i class="diskette"></i><em>순서저장</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header"></th>
+                    <td>즐겨찾기 전송</td>
+                    <td>
+                      <button type="button" class="btn v2 size7 fs1"><i class="transfer"></i><em>즐겨찾기 전송</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">btn.v2.attach_doc</th>
+                    <td>신규검색어 등록 팝업창 매뉴얼</td>
+                    <td>
+                      <button type="button" class="btn v2 attach_doc"><i class="doc"></i><em>사전관리 매뉴얼 V1.Q docx</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.attach</th>
+                    <td>첨부파일</td>
+                    <td>
+                      <button type="button" class="btn attach"><i class="icon icon_clip"></i><em>첨부파일</em></button>
+                    </td>
+                  </tr> 
+                  <tr>
+                    <th class="header">.btn.close</th>
+                    <td>닫기</td>
+                    <td>
+                      <button type="button" class="btn close"><i></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.toggle</th>
+                    <td>목록접기/보기</td>
+                    <td>
+                      <button type="button" class="btn toggle reverse" data-toggle-accordion='{ "extend" : "extend1", "justToggle":true, "isExtendHided" : true}'><em class="folded_msg">목록접기</em><em class="unfolded_msg">목록보기</em><i></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.toggle2</th>
+                    <td>jstree 펼쳐보기</td>
+                    <td>
+                      <button type="button" class="btn toggle2" data-node-ctrl='{"type":"toggle","tree":"jstree1"}'><i></i><em class="extend_msg">펼쳐보기</em><em class="collapse_msg">접기</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.toggle3</th>
+                    <td>통합검색 상세내용 펼쳐보기</td>
+                    <td>
+                      <button type="button" class="btn toggle3" data-toggle-label="sr1_item1"><i></i><em class="extend_msg">펼쳐보기</em><em class="collapse_msg">닫기</em></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.delete</th>
+                    <td>삭제</td>
+                    <td>
+                      <button type="button" class="btn delete"></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.delete2</th>
+                    <td>삭제2</td>
+                    <td>
+                      <button type="button" class="btn delete2"></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.prev,.btn.next</th>
+                    <td>이전,다음</td>
+                    <td>
+                      <button type="button" class="btn prev"></button><button type="button" class="btn next"></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.move</th>
+                    <td>이동</td>
+                    <td>
+                      <button type="button" class="btn move size1"><em>선택<br>등록</em><i></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.move2</th>
+                    <td>이동2</td>
+                    <td>
+                      <button type="button" class="btn move2"><em>메뉴이동</em><i></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.node.up,.btn.node.down</th>
+                    <td>트리 노드 업, 다운</td>
+                    <td>
+                      <button type="button" class="btn node up" data-node-ctrl='{"type":"up","tree":"jstree1"}'><i></i></button>
+                      <button type="button" class="btn node down" data-node-ctrl='{"type":"down","tree":"jstree1"}'><i></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.search1</th>
+                    <td>상단 헤더 검색버튼</td>
+                    <td style="background-color:#000">
+                      <button type="button" class="btn search1"><i></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.search2</th>
+                    <td>통합검색화면 검색버튼</td>
+                    <td>
+                      <button type="button" class="btn search2"><i></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.menu</th>
+                    <td>통합검색화면 전체메뉴 버튼(사용은 안하는 중)</td>
+                    <td>
+                      <button type="button" class="btn menu"><i></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="header">.btn.more</th>
+                    <td>더보기</td>
+                    <td>
+                      <button type="button" class="btn more"><i></i></button>
+                    </td>
+                  </tr> 
+                </tbody> 
+            </table>
+        </div>
+        <div class="pg_section">
+          <h2 id="icons">아이콘</h2>
+          <table class="pg_type1">
+            <colgroup>
+                <col style="width:150px;"/>
+                <col style="width:150px;"/>
+                <col style=""/>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>선택자</th>
+                    <th>종류</th>
+                    <th>형상</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="header">.icon_mcus1</th>
+                <td>메인화면 My메뉴 - 요청한 컨텐츠</td>
+                <td>
+                  <i class="icon icon_mcus1"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_mcus2</th>
+                <td>메인화면 My메뉴 - 완료된 컨텐츠</td>
+                <td>
+                  <i class="icon icon_mcus2"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_mcus3</th>
+                <td>메인화면 My메뉴 - 요청한 문의</td>
+                <td>
+                  <i class="icon icon_mcus3"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_mcus4</th>
+                <td>메인화면 My메뉴 - 답변된 문의</td>
+                <td>
+                  <i class="icon icon_mcus4"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_mcas1</th>
+                <td>메인화면 My메뉴 - 즐겨찾기 관리</td>
+                <td>
+                  <i class="icon icon_mcas1"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_mcas2</th>
+                <td>메인화면 My메뉴 - 통합검색 설정</td>
+                <td>
+                  <i class="icon icon_mcas2"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_crown</th>
+                <td>메인화면 공지사항 리스트용</td>
+                <td style="background-color:#000">
+                  <i class="icon icon_crown"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_reg_keyword1</th>
+                <td>신규검색어 등록 안내 STEP1</td>
+                <td>
+                  <i class="icon icon_reg_keyword1"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_reg_keyword2</th>
+                <td>신규검색어 등록 안내 STEP2</td>
+                <td>
+                  <i class="icon icon_reg_keyword2"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_reg_keyword3</th>
+                <td>신규검색어 등록 안내 STEP3</td>
+                <td>
+                  <i class="icon icon_reg_keyword3"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_leader</th>
+                <td></td>
+                <td>
+                  <i class="icon icon_leader"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_search</th>
+                <td></td>
+                <td>
+                  <i class="icon icon_search"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_person</th>
+                <td></td>
+                <td>
+                  <i class="icon icon_person"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_menu</th>
+                <td></td>
+                <td>
+                  <i class="icon icon_menu"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_contents</th>
+                <td></td>
+                <td>
+                  <i class="icon icon_contents"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_rnb_watch</th>
+                <td>우측 메뉴 아이콘</td>
+                <td>
+                  <i class="icon icon_rnb_watch"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_rnb_star</th>
+                <td>우측 메뉴 아이콘</td>
+                <td>
+                  <i class="icon icon_rnb_star"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_rnb_search</th>
+                <td>우측 메뉴 아이콘</td>
+                <td>
+                  <i class="icon icon_rnb_search"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_rnb_menu</th>
+                <td>우측 메뉴 아이콘</td>
+                <td>
+                  <i class="icon icon_rnb_menu"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_rnb_list</th>
+                <td>우측 메뉴 아이콘</td>
+                <td>
+                  <i class="icon icon_rnb_list"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_rnb_gear</th>
+                <td>우측 메뉴 아이콘</td>
+                <td>
+                  <i class="icon icon_rnb_gear"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_arrow_v1_right</th>
+                <td></td>
+                <td>
+                  <i class="icon icon_arrow_v1_right"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_swungdash</th>
+                <td>칼렌더 시작날짜 ~ 종료날짜</td>
+                <td>
+                  <i class="icon icon_swungdash"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_clip</th>
+                <td>첨부파일</td>
+                <td>
+                  <i class="icon icon_clip"></i>
+                </td>
+              </tr>
+              <tr>
+                <th class="header">.icon_initialize</th>
+                <td>새로고침</td>
+                <td>
+                  <i class="icon icon_initialize"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pg_section">
+              <h2 id="form">폼요소</h2>
+              <table class="pg_type1">
+                  <colgroup>
+                      <col style="width:150px;"/>
+                      <col style="width:150px;"/>
+                      <col style=""/>
+                  </colgroup>
+                  <thead>
+                      <tr>
+                          <th>선택자</th>
+                          <th>종류</th>
+                          <th>형상</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th class="header">.label_radio</th>
+                      <td>radio</td>
+                      <td>
+                        <label class="label_radio"><input type="radio"><i></i><em>라벨명</em></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="header">.label_radio.v1</th>
+                      <td>radio</td>
+                      <td>
+                        <label class="label_radio v1"><input type="radio" name="r1" checked="checked"><i><em>오늘</em></i></label>
+                        <label class="label_radio v1"><input type="radio" name="r1"><i><em>1주일</em></i></label> 
+                        <label class="label_radio v1"><input type="radio" name="r1"><i><em>1개월</em></i></label> 
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="header">.label_check</th>
+                      <td>checkbox</td>
+                      <td>
+                        <label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="header">.select</th>
+                      <td>select</td>
+                      <td>
+                        <span class="select width1">
+                          <select data-select="true">
+                              <option>공통</option>
+                          </select>
+                        </span> 
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="header">data-datepicker="true"</th>
+                      <td>datepicker</td>
+                      <td>
+                        <input type="text" data-datepicker="true">
+                        <i class="icon icon_swungdash"></i>
+                        <input type="text" data-datepicker="true">
+                      </td>
+                    </tr>
+                </tbody> 
+              </table>
+          </div>
+          <div class="pg_section">
+              <h2 id="table_css">테이블 CSS</h2>
+              <table class="pg_type1">
+                  <colgroup>
+                      <col style="width:150px;"/>
+                      <col style="width:150px;"/>
+                      <col style=""/>
+                  </colgroup>
+                  <thead>
+                      <tr>
+                          <th>부여가능 대상</th>
+                          <th>CSS</th>
+                          <th>기능</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.align_l</td>
+                        <td>
+                          텍스트 왼쪽 정렬
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.align_r</td>
+                        <td>
+                          텍스트 오른쪽 정렬
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.align_c</td>
+                        <td>
+                          텍스트 가운데 정렬
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.vert_t</td>
+                        <td>
+                          텍스트 상단 정렬
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.vert_m</td>
+                        <td>
+                          텍스트 가운데 정렬
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.vert_b</td>
+                        <td>
+                          텍스트 하단 정렬
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.no_pad</td>
+                        <td>
+                          셀 내부 패딩 제거
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.no_pad_top</td>
+                        <td>
+                          셀 내부 상단패딩 제거
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.no_pad_bottom</td>
+                        <td>
+                          셀 내부 하단패딩 제거
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.no_pad_left</td>
+                        <td>
+                          셀 내부 좌측패딩 제거
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.no_pad_right</td>
+                        <td>
+                          셀 내부 우측패딩 제거
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.no_data</td>
+                        <td>
+                          검색결과 없을시
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="header">th, td</th>
+                        <td>.overflow</td>
+                        <td>
+                          셀 내 다중 행 일시
+                        </td>
+                      </tr>
+                  </tbody> 
+              </table>
+          </div>
+        <div class="pg_section">
+          <h2 id="tables">테이블</h2>
+            <div class="row_box">
+              <h3>클래쓰 .v1</h3>
+              <table class="v1">
+                <colgroup class="width15">
+                  <col class="c1">
+                  <col class="c2">
+                  <col class="c3">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col"><label class="label_check" data-check-all="chk_group_1"><input type="checkbox"><i></i></label></th>
+                    <th scope="col">제목</th>
+                    <th scope="col">경로</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- nodata일시 
+                  <tr>
+                    <td colspan="3">컨텐츠 목록이 없습니다.</td>
+                  </tr>
+                  -->
+                  <tr>
+                    <td><label class="label_check" data-check-group="chk_group_1"><input type="checkbox"><i></i></label></td>
+                    <td class="align_l">단골 고객 관리 등록/해지</td>
+                    <td class="align_l">상품매뉴얼&gt;가입&gt;음성 부가 서비스</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row_box">
+              <h3>클래쓰 .v2</h3>
+              <table class="v2">
+                <colgroup class="width2">
+                  <col class="c1">
+                  <col class="c2">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">첨부파일</th>
+                    <td>
+                      <div class="file_upload_area">
+                        "--file upload here--"
+                      </div>
+                      <button type="button" class="btn v2"><em>열기</em></button>
+                      <button type="button" class="btn v2"><em>다운로드</em></button>
+                      <button type="button" class="btn v2"><em>전체 다운로드</em></button>
+                    </td>
+                  </tr>
+                  <!-- 유용도 설문 빠짐 -->
+                </tbody>
+              </table>
+            </div>
+            <div class="row_box">
+              <h3>클래쓰 .v3</h3>
+              <table class="v3">
+                <colgroup class="width1">
+                  <col class="c1">
+                  <col class="c2">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">조회대상</th>
+                    <td>전체사용자</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="no_pad"><!-- .no_pad 클래쓰 부여-->
+                      <div class="view_area">
+                        <div class="view_row">
+                          <div class="view_title">
+                            <div class="col1">
+                            </div>
+                            <div class="col2">
+                              <button type="button" class="btn v2 size5"><em>현재 화면 인쇄</em></button>
+                            </div>
+                          </div>
+                          <div class="view_content">
+                            컨텐츠 내용 출력
+                            <p><a href='javascript:;' style="display:inline-block;vertical-align:middle;color:#d07e18;font-family:Malgun Gothic;font-weight:bold;line-height:1.2">▶ 연관 컨텐츠 : <span style="text-decoration:underline"> 프리미엄 임대 서비스</span></a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row_box">
+              <h3>클래쓰 .v4</h3>
+              <div class="wrap_fixed_list ">
+                <table class="v4 fixed_list_header">
+                  <colgroup class="admin_width1">
+                    <col class="c1">
+                    <col class="c2">
+                    <col class="c3">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">선택</th>
+                      <th scope="col">상품명</th>
+                      <th scope="col">코드</th>
+                    </tr>
+                  </thead>
+                </table>
+                <div class="fixed_list_body">
+                  <table class="v4">
+                    <colgroup class="admin_width1">
+                      <col class="c1">
+                      <col class="c2">
+                      <col class="c3">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td class="align_c">
+                          <label class="label_radio"><input type="radio" name="r_1"><i></i></label>
+                        </td>
+                        <td>[MKIS] 시스템 관리자</td>
+                        <td>MKISALLMASTER001</td>
+                      </tr>
+                      <tr>
+                        <td class="align_c">
+                          <label class="label_radio"><input type="radio" name="r_1"><i></i></label>
+                        </td>
+                        <td>[MKIS] 시스템 관리자</td>
+                        <td>MKISALLMASTER001</td>
+                      </tr>
+                      <tr>
+                        <td class="align_c">
+                          <label class="label_radio"><input type="radio" name="r_1"><i></i></label>
+                        </td>
+                        <td>[MKIS] 시스템 관리자</td>
+                        <td>MKISALLMASTER001</td>
+                      </tr>
+                      <tr>
+                        <td class="align_c">
+                          <label class="label_radio"><input type="radio" name="r_1"><i></i></label>
+                        </td>
+                        <td>[MKIS] 시스템 관리자</td>
+                        <td>MKISALLMASTER001</td>
+                      </tr>
+                      <tr>
+                        <td class="align_c">
+                          <label class="label_radio"><input type="radio" name="r_1"><i></i></label>
+                        </td>
+                        <td>[MKIS] 시스템 관리자</td>
+                        <td>MKISALLMASTER001</td>
+                      </tr>
+                      <tr>
+                        <td class="align_c">
+                          <label class="label_radio"><input type="radio" name="r_1"><i></i></label>
+                        </td>
+                        <td>[MKIS] 시스템 관리자</td>
+                        <td>MKISALLMASTER001</td>
+                      </tr>
+                      <tr>
+                        <td class="align_c">
+                          <label class="label_radio"><input type="radio" name="r_1"><i></i></label>
+                        </td>
+                        <td>[MKIS] 시스템 관리자</td>
+                        <td>MKISALLMASTER001</td>
+                      </tr>
+                      <tr>
+                        <td class="align_c">
+                          <label class="label_radio"><input type="radio" name="r_1"><i></i></label>
+                        </td>
+                        <td>[MKIS] 시스템 관리자</td>
+                        <td>MKISALLMASTER001</td>
+                      </tr>
+                      <tr>
+                        <td class="align_c">
+                          <label class="label_radio"><input type="radio" name="r_1"><i></i></label>
+                        </td>
+                        <td>[MKIS] 시스템 관리자</td>
+                        <td>MKISALLMASTER001</td>
+                      </tr>
+                      <tr>
+                        <td class="align_c">
+                          <label class="label_radio"><input type="radio" name="r_1"><i></i></label>
+                        </td>
+                        <td>[MKIS] 시스템 관리자</td>
+                        <td>MKISALLMASTER001</td>
+                      </tr>
+                      <tr>
+                        <td class="align_c">
+                          <label class="label_radio"><input type="radio" name="r_1"><i></i></label>
+                        </td>
+                        <td>[MKIS] 시스템 관리자</td>
+                        <td>MKISALLMASTER001</td>
+                      </tr>
+                      <!-- 검색결과 없을시 -->
+                      <!-- tr>
+                        <td class="no_data size1" colspan="3">
+                          검색 결과가 없습니다. 
+                        </td>
+                      </tr --> 
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row_box">
+              <h3>클래쓰 .v5</h3>
+              <table class="v5">
+                <caption><em class="desc">* 목록을 클릭하면 컨텐츠 상세 내용을 확인할 수 있습니다.</em></caption>
+                <colgroup class="width1">
+                  <col class="c1">
+                  <col class="c2">
+                  <col class="c3">
+                  <col class="c4">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">상품명</th>
+                    <th scope="col">운영상태</th>
+                    <th scope="col">출시일</th>
+                    <th scope="col">담당부서</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="align_l"><a href="javascript:;">Band 데이터 29</a></td>
+                    <td>운영</td>
+                    <td>2016-01-23</td>
+                    <td>요금팀</td>
+                  </tr>
+                  <tr>
+                    <td class="align_l"><a href="javascript:;">Band 데이터 29</a></td>
+                    <td>운영</td>
+                    <td>2016-01-23</td>
+                    <td>요금팀</td>
+                  </tr>
+                  <tr>
+                    <td class="align_l"><a href="javascript:;">Band 데이터 29</a></td>
+                    <td>운영</td>
+                    <td>2016-01-23</td>
+                    <td>요금팀</td>
+                  </tr>
+                  <tr>
+                    <td class="align_l"><a href="javascript:;">Band 데이터 29</a></td>
+                    <td>운영</td>
+                    <td>2016-01-23</td>
+                    <td>요금팀</td>
+                  </tr>
+                  <tr>
+                    <td class="align_l"><a href="javascript:;">Band 데이터 29</a></td>
+                    <td>운영</td>
+                    <td>2016-01-23</td>
+                    <td>요금팀</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row_box">
+              <h3>클래쓰 .v6</h3>
+              삭제됨
+            </div>
+            <div class="row_box">
+              <h3>클래쓰 .v7</h3>
+              <table class="v7">
+                <colgroup class="admin_width1">
+                  <col class="c1">
+                  <col class="c2">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="essential">메뉴명</th>
+                    <td>
+                      <span class="select admin_width5">
+                        <select data-select="true">
+                            <option>선택</option>
+                        </select>
+                      </span>
+                      <em class="desc alert">*메타정보를 적용할 메뉴를 선택하세요</em>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row_box">
+              <h3>클래쓰 .v8</h3>
+              <table class="v8">
+                <colgroup class="admin_width1">
+                  <col class="c1">
+                  <col class="c2">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">업무매뉴얼</th>
+                    <td><input type="text" class="block" value="1"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">상품매뉴얼</th>
+                    <td><input type="text" class="block" value="2"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">전문상담</th>
+                    <td><input type="text" class="block" value="3"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row_box">
+              <h3>클래쓰 .v9</h3>
+              <table class="v9">
+                <tfoot>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn v1"><em>용어 등록</em></button>
+                    </td>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="term_info">
+                        <div class="tb_row">
+                          <div class="name">
+                            <div class="col1">
+                              <strong>가 개통</strong>
+                            </div>
+                            <div class="col2">
+                              <button type="button" class="btn move2 size1"><em>수정</em><i></i></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tb_row">
+                          <div class="desc">
+                            흔히 대리점에서 판매 인센티브를 받기 위해 실사용자에게 만대 되지 않은 상태에서 이동전화를 가입하여 개통 처리하는 것
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row_box">
+              <h3>클래쓰 .v10</h3>
+              <table class="v10">
+                <colgroup class="width1">
+                  <col class="c1">
+                  <col class="c2">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">업무매뉴얼</th>
+                    <td>
+                      <div class="menu_link_area">
+                        <a href="#" class="on"><em>업무 프로세스</em></a>
+                        <a href="#"><em>고객응대</em></a>
+                        <a href="#"><em>홈페이지 안내</em></a>
+                        <a href="#"><em>ISAC업무 응대</em></a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row_box">
+              <h3>클래쓰 .v11</h3>
+              <table class="v11">
+                <colgroup class="admin_width4">
+                  <col class="c1">
+                  <col class="c2">
+                  <col class="c3">
+                  <col class="c4">
+                  <col class="c5">
+                  <col class="c6">
+                  <col class="c7">
+                  <col class="c8">
+                  <col class="c9">
+                  <col class="c10">
+                  <col class="c11">
+                  <col class="c12">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">구분</th>
+                    <th scope="col">조직</th>
+                    <th scope="col">조회대상</th>
+                    <th scope="col">대분류</th>
+                    <th scope="col">중분류</th>
+                    <th scope="col">소분류</th>
+                    <th scope="col">컨텐츠 명</th>
+                    <th scope="col">컨텐츠<br>담당자</th>
+                    <th scope="col">첨부파일<br>여부</th>
+                    <th scope="col">최종<br>변경자ID</th>
+                    <th scope="col">최종<br>변경일시</th>
+                    <th scope="col">총<br>조회수</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--div class="row_box" id="chk_tree">
+              <h3>계층구조</h3>
+                <ul>
+                  <li>
+                  <label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label>
+                    <ul style="padding-left:20px;">
+                      <li>
+                      <label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label>
+                        <ul style="padding-left:20px;">
+                          <li><label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label></li>
+                          <li><label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label></li>
+                        </ul>
+                      </li>
+                      <li>
+                      <label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label>
+                        <ul style="padding-left:20px;">
+                          <li><label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label></li>
+                          <li><label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                  <label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label>
+                    <ul style="padding-left:20px;">
+                      <li>
+                      <label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label>
+                        <ul style="padding-left:20px;">
+                          <li><label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label></li>
+                          <li><label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label></li>
+                        </ul>
+                      </li>
+                      <li>
+                      <label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label>
+                        <ul style="padding-left:20px;">
+                          <li><label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label></li>
+                          <li><label class="label_check"><input type="checkbox"><i></i><em>라벨명</em></label></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <script>
+                $('#chk_tree input').on('change',function() {
+                  var $chk = $(this);
+                  var $chkVal = $chk.prop('checked');
+                  var siblingsClean = true;
+                  var bubbleUp = function($parent) {
+                    if ($parent.attr('id') !== 'chk_tree') {
+                      var innerSiblingsClean = true;
+                      if ($parent.get(0).tagName == 'LI') {
+                        $parent.find('>label>input').prop('checked',$chkVal);
+                        $parent.siblings().each(function(){
+                          if ($(this).find('input').prop('checked')) {
+                            innerSiblingsClean = false;
+                          }
+                        });
+                      }
+                      if (innerSiblingsClean) {
+                        bubbleUp($parent.parent());
+                      }
+                    }
+                  };
+                  var bubbleDown = function($children) {
+                     if ($children[0]) {
+                      if ($children.get(0).tagName == 'LI') {
+                        $children.find('>label>input').prop('checked',$chkVal);
+                      }
+                      bubbleDown($children.children());
+                     } 
+                  };
+                  $chk.closest('li').siblings().each(function(){
+                    if ($(this).find('input').prop('checked')) {
+                      siblingsClean = false;
+                    }
+                  });
+                  if (siblingsClean) {
+                    bubbleUp($chk.parent());
+                    bubbleDown($chk.closest('li').find('ul'));
+                  } else {
+                    bubbleDown($chk.closest('li').find('ul'));
+                  }
+                });
+                </script>
+            </div -->
+          </div>
+        <div class="pg_section">
+            <h2 id="paginate">Paginate</h2>
+            <div class="row_box">
+                <h3>.paginate</h3>
+                <div class="paginate">
+                  <!-- 비활성화시 .disabled 추가 -->
+                  <a href="javascript:;" class="ctrl start" title="처음"><i></i></a>
+                  <a href="javascript:;" class="ctrl prev" title="이전"><i></i></a>
+                  <span class="pages">
+                    <a href="javascript:;">1</a>
+                    <a href="javascript:;">2</a>
+                    <a href="javascript:;">3</a>
+                    <a href="javascript:;">4</a>
+                    <a href="javascript:;">5</a>
+                    <a href="javascript:;">6</a>
+                    <a href="javascript:;">7</a>
+                    <a href="javascript:;">8</a>
+                    <a href="javascript:;">9</a>
+                    <a href="javascript:;" class="curr">10</a>
+                  </span>
+                  <a href="javascript:;" class="ctrl next" title="다음"><i></i></a>
+                  <a href="javascript:;" class="ctrl end" title="끝"><i></i></a>
+                  <!-- 비활성화시 .disabled 추가 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a href="#specification">Specifiaction</a>
+            </li>
+            <li>
+                <a href="#folders">폴더구조</a>
+            </li>
+            <li>
+                <a href="#labels">라벨</a>
+            </li>
+            <li>
+                <a href="#buttons">버튼</a>
+            </li>
+            <li>
+                <a href="#form">폼요소</a>
+            </li>
+            <li>
+                <a href="#table_css">테이블 CSS</a>
+            </li>
+            <li>
+                <a href="#tables">테이블</a>
+            </li>
+            <li>
+                <a href="#paginate">Paginate</a>
+            </li>
+        </ul>
+    </nav>
+    
+</div>
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+</body>
+</html>

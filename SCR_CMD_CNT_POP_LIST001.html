@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title>연관문서</title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1 size1">
+  <section>
+    <div class="p_title">
+      <h3>연관문서</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <div class="p_content">
+        <div class="row">
+          <ul class="tab_nav v1 size1">
+            <li data-tab-label='{"group" : "tab_group1", "status" : "on", "target" : "tab_group1_1"}'>
+              <a href="javascript:;">
+                <em>컨텐츠</em>
+              </a>
+            </li>
+            <li data-tab-label='{"group" : "tab_group1", "status" : "off", "target" : "tab_group1_2"}'>
+              <a href="javascript:;">
+                <em>공지사항</em>
+              </a>
+            </li>
+          </ul>
+          <div class="tab_group" data-tab-group="tab_group1">
+            <div class="tab" data-tab="tab_group1_1">
+              <div class="tab_row">
+                <div class="tab_t">
+                  <div class="col1">
+                    <div class="tab_row">
+                      <!-- jstree_area -->
+                      <div class="jstree_area size1">
+                        <div class="ctrl_layer add" data-toggle-target="toggle1">
+                          <div class="guide">추가할 폴더명을 입력해 주세요.</div>
+                          <div>
+                            <div class="t_fixed">
+                              <div class="t_c_middle col1">
+                                <input type="text" class="block">
+                              </div>
+                              <div class="t_c_middle col2">
+                                <em class="desc alert">*최대N자</em>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="btns">
+                            <button type="button" class="btn v1 red big1"><em>등록</em></button>
+                            <button type="button" class="btn v1 grey big1" data-toggle-label="toggle1"><em>취소</em></button>
+                          </div>
+                        </div>
+                        <div class="jstree_header">
+                          <div class="tit">
+                            <strong>즐겨찾기 분류</strong>
+                          </div>
+                          <div class="ctrl"></div>
+                        </div>
+                        <div class="jstree_container">
+                          <div id="jstree1">
+                            <!-- jstree here -->
+                            </div>
+                            <script type="text/javascript">
+                              $(document).ready(function(){
+                                $('#jstree1').jstree({ 'core' : {
+                                    'data' : [
+                                       {
+                                         text : 'Root node 2',
+                                         state : {
+                                           'opened' : false,
+                                           'selected' : false
+                                         },
+                                         li_attr : { "class": ""},
+                                         a_attr      : {},  // attributes for the generated A node
+                                         children : [
+                                           { 
+                                             'text' : 'Child 1',
+                                              state : {
+                                                 'opened' : false
+                                              },
+                                             children : [
+                                               { 
+                                                 'text' : 'Child 2',
+                                                 state : {
+                                                   'opened' : false
+                                                 },
+                                                 children : [
+                                                   { 
+                                                     'text' : 'Child 2Child 2Child 2Child 2Child 2Child 2Child 2Child 2Child 2Child 2Child 2',
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   }
+                                                 ]
+                                               }
+                                             ]
+                                           },
+                                           { 
+                                             'text' : 'Child 1',
+                                              state : {
+                                                 'opened' : false
+                                              },
+                                             children : [
+                                               { 
+                                                 'text' : 'Child 2',
+                                                 state : {
+                                                   'opened' : false
+                                                 },
+                                                 children : [
+                                                   { 
+                                                     'text' : 'Child 2',
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   }
+                                                 ]
+                                               }
+                                             ]
+                                           }
+                                         ]
+                                      },
+                                      {
+                                         text : 'Root node 2',
+                                         state : {
+                                           'opened' : true,
+                                           'selected' : false
+                                         },
+                                         li_attr : { "class": ""},
+                                         a_attr      : {},  // attributes for the generated A node
+                                         children : [
+                                           { 
+                                             'text' : 'Child 1',
+                                              state : {
+                                                 'opened' : true
+                                              },
+                                             children : [
+                                               { 
+                                                 'text' : 'Child 2',
+                                                 state : {
+                                                   'opened' : true
+                                                 },
+                                                 children : [
+                                                   { 
+                                                     'text' : 'Child 2',
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   }
+                                                 ]
+                                               }
+                                             ]
+                                           }
+                                         ]
+                                      },
+                                      {
+                                         text : 'Root node 2',
+                                         state : {
+                                           'opened' : true,
+                                           'selected' : false
+                                         },
+                                         li_attr : { "class": ""},
+                                         a_attr      : {},  // attributes for the generated A node
+                                         children : [
+                                           { 
+                                             'text' : 'Child 1',
+                                              state : {
+                                                 'opened' : true
+                                              },
+                                             children : [
+                                               { 
+                                                 'text' : 'Child 2',
+                                                 state : {
+                                                   'opened' : true
+                                                 },
+                                                 children : [
+                                                   { 
+                                                     'text' : 'Child 2',
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   }
+                                                 ]
+                                               }
+                                             ]
+                                           }
+                                         ]
+                                      },
+                                      {
+                                         text : 'Root node 2',
+                                         state : {
+                                           'opened' : true,
+                                           'selected' : false
+                                         },
+                                         li_attr : { "class": ""},
+                                         a_attr      : {},  // attributes for the generated A node
+                                         children : [
+                                           { 
+                                             'text' : 'Child 1',
+                                              state : {
+                                                 'opened' : true
+                                              },
+                                             children : [
+                                               { 
+                                                 'text' : 'Child 2',
+                                                 state : {
+                                                   'opened' : true
+                                                 },
+                                                 children : [
+                                                   { 
+                                                     'text' : 'Child 2',
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   }
+                                                 ]
+                                               }
+                                             ]
+                                           }
+                                         ]
+                                      },
+                                      {
+                                         text : 'Root node 2',
+                                         state : {
+                                           'opened' : true,
+                                           'selected' : false
+                                         },
+                                         li_attr : { "class": ""},
+                                         a_attr      : {},  // attributes for the generated A node
+                                         children : [
+                                           { 
+                                             'text' : 'Child 1',
+                                              state : {
+                                                 'opened' : true
+                                              },
+                                             children : [
+                                               { 
+                                                 'text' : 'Child 2',
+                                                 state : {
+                                                   'opened' : true
+                                                 },
+                                                 children : [
+                                                   { 
+                                                     'text' : 'Child 2',
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   },
+                                                   { 
+                                                     'text' : 'Child 2' 
+                                                   }
+                                                 ]
+                                               }
+                                             ]
+                                           }
+                                         ]
+                                      }
+                                    ]
+                                } });
+                              });
+                            </script>
+                          </div>
+                        </div>
+                        <!-- //.jstree_area -->
+                    </div>
+                  </div>
+                  <div class="col2">
+                    <div class="tab_row">
+                      <div class="p_search">
+                        <div class="condition">
+                          <label class="label_check">
+                            <input type="checkbox" checked="checked">
+                            <i></i>
+                            <em>제목</em>
+                          </label>
+                          <label class="label_check">
+                            <input type="checkbox">
+                            <i></i>
+                            <em>본문</em>
+                          </label>
+                          <label class="label_check">
+                            <input type="checkbox">
+                            <i></i>
+                            <em>첨부파일</em>
+                          </label>
+                          <label class="label_check">
+                            <input type="checkbox">
+                            <i></i>
+                            <em>결과 내 검색</em>
+                          </label>
+                        </div>
+                        <div class="t_fixed">
+                          <div class="t_c_middle c1">
+                            <input type="text" class="block" placeholder="검색어를 입력하세요.">
+                          </div>
+                          <div class="t_c_middle c2">
+                            <button type="button" class="btn v1"><em>검색</em></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab_row">
+                      <div class="list_area">
+                        <div class="summary">
+                          <div class="count">
+                            <em>[전체</em><b>30</b><em>건]</em>
+                          </div>
+                          <div class="sorting"></div>
+                        </div>
+                          <table class="v5">
+                            <colgroup class="width2">
+                              <col class="c1">
+                              <col class="c2">
+                              <col class="c3">
+                              <col class="c4">
+                              <col class="c5">
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th scope="col">업무</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">경로</th>
+                                <th scope="col">등록일</th>
+                                <th scope="col">선택</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">심야 데이터 할인</a></td>
+                                <td>상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>무선/유선</td>
+                                <td class="align_l"><a href="javascript:;">심야 데이터 할인</a></td>
+                                <td>상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">심야 데이터 할인</a></td>
+                                <td>상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">심야 데이터 할인</a></td>
+                                <td>상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">심야 데이터 할인</a></td>
+                                <td>상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">심야 데이터 할인</a></td>
+                                <td>상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">심야 데이터 할인</a></td>
+                                <td>상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">심야 데이터 할인</a></td>
+                                <td>상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">심야 데이터 할인</a></td>
+                                <td>상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">심야 데이터 할인</a></td>
+                                <td>상품메뉴얼>부가서비스>음성 부가 서비스</td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div class="paginate">
+                            <!-- 비활성화시 .disabled 추가 -->
+                            <a href="javascript:;" class="ctrl start" title="처음"><i></i></a>
+                            <a href="javascript:;" class="ctrl prev" title="이전"><i></i></a>
+                            <span class="pages">
+                              <a href="javascript:;">1</a>
+                              <a href="javascript:;">2</a>
+                              <a href="javascript:;">3</a>
+                              <a href="javascript:;">4</a>
+                              <a href="javascript:;">5</a>
+                              <a href="javascript:;">6</a>
+                              <a href="javascript:;">7</a>
+                              <a href="javascript:;">8</a>
+                              <a href="javascript:;">9</a>
+                              <a href="javascript:;" class="curr">10</a>
+                            </span>
+                            <a href="javascript:;" class="ctrl next" title="다음"><i></i></a>
+                            <a href="javascript:;" class="ctrl end" title="끝"><i></i></a>
+                            <!-- 비활성화시 .disabled 추가 -->
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div> 
+            </div>
+            <div class="tab" data-tab="tab_group1_2">
+              <div class="tab_row">
+                <div class="tab_t">
+                  <div class="col1">
+                    <div class="tab_row">
+                      <!-- jstree_area -->
+                      <div class="jstree_area size1">
+                        <div class="ctrl_layer add" data-toggle-target="toggle1">
+                          <div class="guide">추가할 폴더명을 입력해 주세요.</div>
+                          <div>
+                            <div class="t_fixed">
+                              <div class="t_c_middle col1">
+                                <input type="text" class="block">
+                              </div>
+                              <div class="t_c_middle col2">
+                                <em class="desc alert">*최대N자</em>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="btns">
+                            <button type="button" class="btn v1 red big1"><em>등록</em></button>
+                            <button type="button" class="btn v1 grey big1" data-toggle-label="toggle1"><em>취소</em></button>
+                          </div>
+                        </div>
+                        <div class="jstree_header">
+                          <div class="tit">
+                            <strong>즐겨찾기 분류</strong>
+                          </div>
+                          <div class="ctrl"></div>
+                        </div>
+                        <div class="jstree_container">
+                          <div id="jstree2">
+                            <!-- jstree here -->
+                            </div>
+                            <script type="text/javascript">
+                              $(document).ready(function(){
+                                $('#jstree2').jstree({ 'core' : {
+                                    'data' : [
+                                       {
+                                         text : '공지사항',
+                                         state : {
+                                           'opened' : true,
+                                           'selected' : false
+                                         },
+                                         li_attr : { "class": ""},
+                                         a_attr      : {},
+                                         children : [
+                                           { 
+                                             'text' : '실시간 업무'
+                                           },{ 
+                                             'text' : 'SMS/MMS'
+                                           },{ 
+                                             'text' : '언론보도'
+                                           },{ 
+                                             'text' : '오류/작업/업데이트'
+                                           },{ 
+                                             'text' : '이벤트'
+                                           },{ 
+                                             'text' : '일일공지'
+                                           },{ 
+                                             'text' : '상품공지'
+                                           },{ 
+                                             'text' : 'ISAC 공지'
+                                           }
+                                         ]
+                                      }
+                                    ]
+                                } });
+                              });
+                            </script>
+                          </div>
+                        </div>
+                        <!-- //.jstree_area -->
+                    </div>
+                  </div>
+                  <div class="col2">
+                    <div class="tab_row">
+                      <div class="p_search">
+                        <div class="condition">
+                          <label class="label_check">
+                            <input type="checkbox" checked="checked">
+                            <i></i>
+                            <em>제목</em>
+                          </label>
+                          <label class="label_check">
+                            <input type="checkbox">
+                            <i></i>
+                            <em>본문</em>
+                          </label>
+                          <label class="label_check">
+                            <input type="checkbox">
+                            <i></i>
+                            <em>첨부파일</em>
+                          </label>
+                          <label class="label_check">
+                            <input type="checkbox">
+                            <i></i>
+                            <em>결과 내 검색</em>
+                          </label>
+                        </div>
+                        <div class="t_fixed">
+                          <div class="t_c_middle c1">
+                            <input type="text" class="block" placeholder="검색어를 입력하세요.">
+                          </div>
+                          <div class="t_c_middle c2">
+                            <button type="button" class="btn v1"><em>검색</em></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab_row">
+                      <div class="list_area">
+                        <div class="summary">
+                          <div class="count">
+                            <em>[전체</em><b>30</b><em>건]</em>
+                          </div>
+                          <div class="sorting"></div>
+                        </div>
+                          <table class="v5">
+                            <colgroup class="width3">
+                              <col class="c1">
+                              <col class="c2">
+                              <col class="c3">
+                              <col class="c4">
+                              <col class="c5">
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th scope="col">유형</th>
+                                <th scope="col">업무</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">등록일</th>
+                                <th scope="col">선택</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>실시간</td>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">T멤버쉽 혜택 변경 안내</a></td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>실시간</td>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">T멤버쉽 혜택 변경 안내</a></td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>실시간</td>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">T멤버쉽 혜택 변경 안내</a></td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>실시간</td>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">T멤버쉽 혜택 변경 안내</a></td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>실시간</td>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">T멤버쉽 혜택 변경 안내</a></td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>실시간</td>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">T멤버쉽 혜택 변경 안내</a></td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>실시간</td>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">T멤버쉽 혜택 변경 안내</a></td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>실시간</td>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">T멤버쉽 혜택 변경 안내</a></td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>실시간</td>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">T멤버쉽 혜택 변경 안내</a></td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                              <tr>
+                                <td>실시간</td>
+                                <td>유선</td>
+                                <td class="align_l"><a href="javascript:;">T멤버쉽 혜택 변경 안내</a></td>
+                                <td>2016-06-15</td>
+                                <td><a href="javascript:;" class="under_line">선택</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div class="paginate">
+                            <!-- 비활성화시 .disabled 추가 -->
+                            <a href="javascript:;" class="ctrl start" title="처음"><i></i></a>
+                            <a href="javascript:;" class="ctrl prev" title="이전"><i></i></a>
+                            <span class="pages">
+                              <a href="javascript:;">1</a>
+                              <a href="javascript:;">2</a>
+                              <a href="javascript:;">3</a>
+                              <a href="javascript:;">4</a>
+                              <a href="javascript:;">5</a>
+                              <a href="javascript:;">6</a>
+                              <a href="javascript:;">7</a>
+                              <a href="javascript:;">8</a>
+                              <a href="javascript:;">9</a>
+                              <a href="javascript:;" class="curr">10</a>
+                            </span>
+                            <a href="javascript:;" class="ctrl next" title="다음"><i></i></a>
+                            <a href="javascript:;" class="ctrl end" title="끝"><i></i></a>
+                            <!-- 비활성화시 .disabled 추가 -->
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p_footer">
+        <button type="button" class="btn v1 grey big1"><em>닫기</em></button>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

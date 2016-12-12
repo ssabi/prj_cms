@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1 size1">
+  <section>
+    <div class="p_title">
+      <h3>구비서류</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <div class="p_header">
+        <div class="tit">
+          <strong></strong>
+        </div>
+        <div class="ctrl">
+          <button type="button" class="btn v1 grey"><em>즐겨찾기</em></button>
+          <button type="button" class="btn v1 grey"><em>전체인쇄</em></button>
+          <button type="button" class="btn v1 grey"><em>변경이력</em></button>
+        </div>  
+      </div>
+      <div class="p_content">
+        <div class="row">
+          <table class="v2" data-toggle-accordion-collapse="collapse1">
+            <colgroup class="width4">
+              <col class="c1">
+              <col class="c2">
+              <col class="c3">
+              <col class="c4">
+              <col class="c5">
+              <col class="c6">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">제목</th>
+                <td colspan="4">SKT 가입제한</td>
+                <td class="align_r">조회수 : 230</td>
+              </tr>
+              <tr>
+                <th scope="row">경로</th>
+                <td colspan="5">공지사항&nbsp;&gt;&nbsp;실시간</td>
+              </tr>
+              <tr>
+                <th scope="row">조직구분</th>
+                <td>SKT</td>
+                <th scope="row">업무구분</th>
+                <td>유선</td>
+                <th scope="row">등록일</th>
+                <td>2016-06-15 13:22</td>
+              </tr>
+              <tr>
+                <th scope="row">연관단말기</th>
+                <td colspan="4">갤럭시 노트7(SM-N930S_64GS)/팻네임(모델명)</td>
+                <td class="align_r"></td>
+              </tr>
+              <tr>
+                <th scope="row">연관상품</th>
+                <td colspan="4">
+                  Band 데이터 29 / Band 데이터 39 / Band 데이터 49
+                </td>
+                <td class="align_r">
+                  <button type="button" class="btn toggle reverse" data-toggle-accordion='{ "extend" : "extend1", "justToggle":true, "isExtendHided" : true}'><em class="folded_msg">목록접기</em><em class="unfolded_msg">목록보기</em><i></i></button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">개요</th>
+                <td colspan="5"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="toggle_area v1 hide" data-toggle-accordion-extend="extend1">
+            <ul class="tab_nav v1">
+              <li data-tab-label='{"group" : "tab_group2", "status" : "on", "target" : "tab_group2_1"}'>
+                <a href="javascript:;">
+                  <em>상품정보</em>
+                </a>
+              </li>
+              <li data-tab-label='{"group" : "tab_group2", "status" : "off", "target" : "tab_group2_2"}'>
+                <a href="javascript:;">
+                  <em>관련 컨텐츠</em>
+                </a>
+              </li>
+            </ul>
+            <div class="tab_group" data-tab-group="tab_group2">
+              <div class="tab" data-tab="tab_group2_1">
+                <div class="tab_row">
+                  <table class="v5">
+                    <caption><em class="desc">* 목록을 클릭하면 컨텐츠 상세 내용을 확인할 수 있습니다.</em></caption>
+                    <colgroup class="width1">
+                      <col class="c1">
+                      <col class="c2">
+                      <col class="c3">
+                      <col class="c4">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">상품명</th>
+                        <th scope="col">운영상태</th>
+                        <th scope="col">출시일</th>
+                        <th scope="col">담당부서</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="align_l"><a href="javascript:;">Band 데이터 29</a></td>
+                        <td>운영</td>
+                        <td>2016-01-23</td>
+                        <td>요금팀</td>
+                      </tr>
+                      <tr>
+                        <td class="align_l"><a href="javascript:;">Band 데이터 29</a></td>
+                        <td>운영</td>
+                        <td>2016-01-23</td>
+                        <td>요금팀</td>
+                      </tr>
+                      <tr>
+                        <td class="align_l"><a href="javascript:;">Band 데이터 29</a></td>
+                        <td>운영</td>
+                        <td>2016-01-23</td>
+                        <td>요금팀</td>
+                      </tr>
+                      <tr>
+                        <td class="align_l"><a href="javascript:;">Band 데이터 29</a></td>
+                        <td>운영</td>
+                        <td>2016-01-23</td>
+                        <td>요금팀</td>
+                      </tr>
+                      <tr>
+                        <td class="align_l"><a href="javascript:;">Band 데이터 29</a></td>
+                        <td>운영</td>
+                        <td>2016-01-23</td>
+                        <td>요금팀</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="paginate">
+                    <!-- 비활성화시 .disabled 추가 -->
+                    <a href="javascript:;" class="ctrl start" title="처음"><i></i></a>
+                    <a href="javascript:;" class="ctrl prev" title="이전"><i></i></a>
+                    <span class="pages">
+                      <a href="javascript:;">1</a>
+                      <a href="javascript:;">2</a>
+                      <a href="javascript:;">3</a>
+                      <a href="javascript:;">4</a>
+                      <a href="javascript:;">5</a>
+                      <a href="javascript:;">6</a>
+                      <a href="javascript:;">7</a>
+                      <a href="javascript:;">8</a>
+                      <a href="javascript:;">9</a>
+                      <a href="javascript:;" class="curr">10</a>
+                    </span>
+                    <a href="javascript:;" class="ctrl next" title="다음"><i></i></a>
+                    <a href="javascript:;" class="ctrl end" title="끝"><i></i></a>
+                    <!-- 비활성화시 .disabled 추가 -->
+                  </div>
+                </div>
+              </div>
+              <div class="tab" data-tab="tab_group2_2">
+                <div class="tab_row">
+                  t2
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="toggle_area">
+            <ul class="tab_nav v2">
+              <li data-tab-label='{"group" : "tab_group1", "status" : "on", "target" : "tab_group1_1"}'>
+                <a href="javascript:;" class="no_delete">
+                  <em>개요</em>
+                </a>
+              </li>
+              <li data-tab-label='{"group" : "tab_group1", "status" : "off", "target" : "tab_group1_2"}'>
+                <a href="javascript:;" class="no_delete">
+                  <em>관련자료</em>
+                </a>
+              </li>
+            </ul>
+            <div class="tab_group" data-tab-group="tab_group1">
+              <div class="tab" data-tab="tab_group1_1">
+                <div class="tab_row">
+                  <table class="v3">
+                    <colgroup class="width1">
+                      <col class="c1">
+                      <col class="c2">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">조회대상</th>
+                        <td>전체사용자</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="no_pad"><!-- .no_pad 클래쓰 부여-->
+                          <div class="view_area">
+                            <div class="view_row">
+                              <div class="view_title">
+                                <div class="col1">
+                                </div>
+                                <div class="col2">
+                                  <button type="button" class="btn v2 size5"><em>현재 화면 인쇄</em></button>
+                                </div>
+                              </div>
+                              <div class="view_content">
+                                <!-- 문서양식 -->
+<link rel="stylesheet" type="text/css" href="http://stellent.sktelecom.com:8080/css/pop.css?t=1476257278890">
+<style type="text/css">
+<!--
+td{line-height:14px; font-family: "굴림체"; font-size: 9pt; color: #000000;}
+.style9 {
+    font-family: "굴림체";
+    font-size: 11pt;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding:10 0 5 0;
+}
+.style11 {font-family: "굴림체"; font-size: 13pt; font-weight: bold; color: #000000; }
+.style12 {font-size: 10pt; color: #000000; }
+.style13 {
+    color: #000000;
+    font-weight: bold;
+}
+.style14 {color: #000000}
+.style16 {color: #000000; font-weight: bold; font-family: "굴림체"; }
+body {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+.style19 {
+    font-family: "굴림체";
+    font-weight: bold;
+    font-style: italic;
+}
+.style20 {font-family: "Arial "}
+.style21 {font-family: "굴림체"}
+.style23 {font-size: 11pt;line-height:24px;}
+.style25 {font-weight: bold; color: #FFFFFF; padding:10 0 5 0; font-size: 11pt; }
+.style26 {font-size: 18pt; color: #FFFFFF; font-weight:bold; line-height:24px;}
+
+
+-->
+</style>
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" class="Termstable03" border="1" cellspacing="0" bordercolor="#000000" cellpadding="1" width="780" align="left">
+<tbody>
+<tr>
+<td style="PADDING-BOTTOM: 20px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 20px" width="775" align="center">
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" border="0" cellspacing="0" cellpadding="0" width="740" bgcolor="#5496fa">
+<tbody>
+<tr>
+<td style="BACKGROUND-COLOR: #6699ff" class="style26" height="50" align="center">
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><font style="FONT-FAMILY: 맑은 고딕" face="뫼비우스 Regular">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고객센터/지점 주요공지</font></p></td>
+<td style="BACKGROUND-COLOR: #6699ff" class="style23" width="150" align="center">
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><b><font style="FONT-FAMILY: 맑은 고딕" color="white" face="뫼비우스 Regular">2016/12/01 (목)</font></b></p></td></tr></tbody></table>
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;</p>
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" border="0" cellspacing="0" cellpadding="0" width="740" align="center">
+<tbody>
+<tr>
+<td>
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" border="0" cellspacing="0" cellpadding="0" width="130" height="33">
+<tbody>
+<tr>
+<td style="BACKGROUND-COLOR: #ff5e00" class="style25" align="center">
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><span style="FONT-FAMILY: 맑은 고딕; FONT-SIZE: 12pt"><span><span><span>신상품</span></span></span></span></p></td></tr></tbody></table></td></tr>
+<tr>
+<td height="5">
+<p style="LINE-HEIGHT: 10%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;</p></td></tr></tbody></table>
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;</p>
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" border="0" cellspacing="0" cellpadding="0" width="740" align="center">
+<tbody>
+<tr>
+<td>
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" border="0" cellspacing="0" cellpadding="0" width="130" height="33">
+<tbody>
+<tr>
+<td style="BACKGROUND-COLOR: #ff5e00" class="style9" bgcolor="#f67718" align="center">
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><font face="뫼비우스 Regular"><span style="FONT-FAMILY: 맑은 고딕; FONT-SIZE: 12pt">변경</span></font></p></td></tr></tbody></table></td></tr>
+<tr>
+<td height="5">
+<p style="LINE-HEIGHT: 10%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;</p></td></tr></tbody></table>
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;</p>
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" border="0" cellspacing="0" cellpadding="0" width="740" align="center">
+<tbody>
+<tr>
+<td>
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" border="0" cellspacing="0" cellpadding="0" width="130" height="33">
+<tbody>
+<tr>
+<td style="BACKGROUND-COLOR: #ff5e00" class="style9" bgcolor="#f67718" align="center">
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><font style="FONT-FAMILY: 맑은 고딕" face="뫼비우스 Regular">기타</font></p></td></tr></tbody></table></td></tr>
+<tr>
+<td height="5">
+<p style="LINE-HEIGHT: 10%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;</p></td></tr></tbody></table>
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;&nbsp;&nbsp;</p>
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" border="0" cellspacing="0" cellpadding="0" width="740" align="center">
+<tbody>
+<tr>
+<td>
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" border="0" cellspacing="0" cellpadding="0" width="130" height="33">
+<tbody>
+<tr>
+<td style="BACKGROUND-COLOR: #ff5e00" class="style9" bgcolor="#f67718" align="center">
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><font face="뫼비우스 Regular"><span style="FONT-FAMILY: 맑은 고딕; FONT-SIZE: 12pt">FAQ</span></font></p></td></tr></tbody></table></td></tr>
+<tr>
+<td height="5">
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;</p></td></tr></tbody></table>
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; HEIGHT: 225px" class="Termstable03" border="1" cellspacing="0" bordercolor="#000000" cellpadding="1" width="740">
+<tbody>
+<tr bgcolor="#000000">
+<td style="BACKGROUND-COLOR: #ffd9ec; HEIGHT: 25px" class="style16" height="24">
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><span style="FONT-FAMILY: 맑은 고딕"><span face="뫼비우스 Regular">Q1.[ ]</span></span></p></td></tr>
+<tr>
+<td style="BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BACKGROUND-COLOR: #e8fdff; HEIGHT: 25px; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid">
+<p><span style="FONT-FAMILY: 맑은 고딕">&nbsp;<span style="COLOR: #ff0000">☞ </span></span></p></td></tr>
+<tr>
+<td style="BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BACKGROUND-COLOR: #ffd9ec; HEIGHT: 25px; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid">
+<p><span style="FONT-FAMILY: 맑은 고딕"><strong>Q2.[ ]</strong></span></p></td></tr>
+<tr>
+<td style="BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BACKGROUND-COLOR: #e8fdff; HEIGHT: 25px; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid">
+<p><span style="FONT-FAMILY: 맑은 고딕">&nbsp;<span style="COLOR: #ff0000">☞ </span></span></p></td></tr>
+<tr>
+<td style="BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BACKGROUND-COLOR: #ffd9ec; HEIGHT: 25px; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid">
+<p><span style="FONT-FAMILY: 맑은 고딕"><strong>Q3.[ ]</strong></span></p></td></tr>
+<tr>
+<td style="BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BACKGROUND-COLOR: #e8fdff; HEIGHT: 25px; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid">
+<p><span style="FONT-FAMILY: 맑은 고딕">&nbsp;<span style="COLOR: #ff0000">☞ </span></span></p></td></tr>
+<tr>
+<td style="BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BACKGROUND-COLOR: #ffd9ec; HEIGHT: 25px; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid">
+<p><span style="FONT-FAMILY: 맑은 고딕"><strong>Q4.[ ]</strong></span></p></td></tr>
+<tr>
+<td style="BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BACKGROUND-COLOR: #e8fdff; HEIGHT: 25px; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid">
+<p><span style="FONT-FAMILY: 맑은 고딕">&nbsp;<span style="COLOR: #ff0000">☞ </span></span></p></td></tr>
+<tr>
+<td style="BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BACKGROUND-COLOR: #ffd9ec; HEIGHT: 25px; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid">
+<p><span style="FONT-FAMILY: 맑은 고딕"><strong>Q5.[ ]</strong></span></p></td></tr>
+<tr bgcolor="#ffffff">
+<td style="BACKGROUND-COLOR: #e8fdff; HEIGHT: 25px" class="list">
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><span style="COLOR: #ff0000"><span style="FONT-FAMILY: 맑은 고딕"><b><span face="뫼비우스 Regular" color="red">☞</span></b></span></span></p></td></tr></tbody></table>
+<p style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;</p>
+<table style="LINE-HEIGHT: 150%; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" border="0" cellspacing="0" cellpadding="0" width="740" align="center">
+<tbody>
+<tr>
+<td>
+<p><strong><font face="뫼비우스 Regular"><i><span style="FONT-FAMILY: 맑은 고딕">고객Communication팀 [이지컴]</span></i></font></strong></p></td></tr></tbody></table></td></tr></tbody></table>
+<p>&nbsp;</p>
+
+
+                                <!-- //문서양식 -->
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab" data-tab="tab_group1_2">
+                <div class="tab_row">
+                  2
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <table class="v2">
+            <colgroup class="width2">
+              <col class="c1">
+              <col class="c2">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">첨부파일</th>
+                <td>
+                  <div class="file_upload_area">
+                    "--file upload here--"
+                  </div>
+                  <button type="button" class="btn v2"><em>열기</em></button>
+                  <button type="button" class="btn v2"><em>다운로드</em></button>
+                  <button type="button" class="btn v2"><em>전체 다운로드</em></button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">유용도 설문</th>
+                <td>
+                  <ul class="in_list">
+                    <li>
+                      <strong>위의 공지 내용이 상담에 도움이 되었습니까?</strong>
+                    </li>
+                    <li>
+                      <label class="label_radio"><input type="radio" name="r_3" checked="checked"><i></i><em>매우 그렇다</em></label>
+                      <label class="label_radio"><input type="radio" name="r_3"><i></i><em>그렇다</em></label>
+                      <label class="label_radio"><input type="radio" name="r_3"><i></i><em>보통이다</em></label>
+                      <label class="label_radio"><input type="radio" name="r_3"><i></i><em>그렇지 않다</em></label>
+                      <label class="label_radio"><input type="radio" name="r_3"><i></i><em>매우 그렇지 않다</em></label>
+                    </li>
+                    <li>
+                      <input type="text" class="size3" placeholder="추가 내용을 입력할 수 있습니다.">
+                      <em class="desc alert">*최대N자</em>
+                      <button type="button" class="btn v2 pos1"><em>설문하기</em></button>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="p_footer">
+        <div class="t_auto">
+          <div class="t_c_middle">
+            <button type="button" class="btn v1 big1"><em>Version Up</em></button>
+            <button type="button" class="btn v1 big1"><em>오류 수정</em></button>
+            <button type="button" class="btn v1 big1"><em>변경 요청</em></button>
+            <button type="button" class="btn v1 big1"><em>만료 요청</em></button>
+          </div>
+          <div class="t_c_middle align_r">
+            <button type="button" class="btn v1 big1 grey"><em>닫기</em></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>

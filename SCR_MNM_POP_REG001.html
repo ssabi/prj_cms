@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=yes,width=1250"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <!-- GLOBAL LEVEL PLUGIN STYLES -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/selectordie/selectordie.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="assets/lib/jstree/themes/default/style.min.css"/>
+  <!-- //GLOBAL LEVEL PLUGIN STYLES -->  
+  <!-- GLOBAL LEVEL PLUGINS -->
+  <script type="text/javascript" src="assets/lib/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/lib/slick/slick.js"></script>
+  <script type="text/javascript" src="assets/lib/selectordie/selectordie.js"></script>
+  <script type="text/javascript" src="assets/lib/jstree/jstree.min.js" ></script>
+  <!-- //GLOBAL LEVEL PLUGINS -->
+  
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+  <title></title>
+</head>
+<body>
+<!-- BEGIN POPUP -->
+<div id="popup" class="p_v1">
+  <section>
+    <div class="p_title">
+      <h3>메뉴등록</h3>
+      <a href="javascript:;" class="close"><i class="icon icon_close"></i></a>
+    </div>
+    <div class="p_container">
+      <div class="p_content">
+        <div class="row">
+          <table class="v2">
+            <colgroup class="admin_width3">
+              <col class="c1">
+              <col class="c2">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">메뉴유형</th>
+                <td>
+                  <span class="select admin_width4">
+                    <select data-select="true">
+                        <option>선택</option>
+                    </select>
+                  </span> 
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">메뉴ID</th>
+                <td>1234534</td>
+              </tr>
+              <tr>
+                <th scope="row">상위메뉴 경로</th>
+                <td>홈</td>
+              </tr>
+              <tr>
+                <th scope="row" class="essential">메뉴명</th>
+                <td>
+                  <input type="text" class="admin_size4" maxlength="15">
+                  <em class="desc alert">*최대15자</em>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="essential">URL 정보</th>
+                <td>
+                  <input type="text" class="admin_size7">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="essential">메뉴접근 정책</th>
+                <td>
+                  <div class="input_area">
+                    <label class="label_check"><input type="checkbox"><i></i><em>PC 내부</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>PC 외부</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>Mobile 내부</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>Mobile 외부</em></label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="essential">메뉴접근 그룹</th>
+                <td>
+                  <div class="input_area size1">
+                    <label class="label_check"><input type="checkbox"><i></i><em>본사</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>마케팅팀</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>고객센터</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>로밍센터</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>대리점</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>지점</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>미납센터</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>AS센터</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>CIA</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>홈</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>행복기사</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>NIS</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>RPM</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>솔루션</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>OSS</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>ISAC</em></label>
+                    <label class="label_check"><input type="checkbox"><i></i><em>기타</em></label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="essential">상담유형</th>
+                <td><label class="label_check"><input type="checkbox"><i></i><em>전문상담</em></label></td>
+              </tr>
+              <tr>
+                <th scope="row" class="essential">사용여부</th>
+                <td>
+                  <label class="label_radio"><input type="radio" name="r1" checked="checked"><i></i><em>사용</em></label>
+                  <label class="label_radio"><input type="radio" name="r1"><i></i><em>미사용</em></label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="essential">상담노출 유무</th>
+                <td>
+                  <label class="label_radio"><input type="radio" name="r2" checked="checked"><i></i><em>노출</em></label>
+                  <label class="label_radio"><input type="radio" name="r2"><i></i><em>비노출</em></label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">메뉴설명</th>
+                <td>
+                  <textarea class="admin_size3 block" maxlength="100"></textarea>
+                  <em class="desc alert admin_pos1">*최대100자</em>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="p_footer">
+        <button type="button" class="btn v1 red big1"><em>등록</em></button>
+        <button type="button" class="btn v1 grey big1"><em>취소</em></button>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- //POPUP -->
+<button type="button" id="to_top" class="hide"></button>
+<!-- GLOBAL LEVEL SCRIPT -->
+<script type="text/javascript" src="assets/js/common.ui.js"></script>
+<!-- //GLOBAL LEVEL SCRIPT -->
+</body> 
+</html>
