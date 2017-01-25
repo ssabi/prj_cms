@@ -721,8 +721,8 @@
                   <ul class="in_list">
                     <li>
                       <em class="item">사용여부 :</em>
-                      <label class="label_radio"><input type="radio" name="r2" checked="checked" data-related-form-label='{"way": "radio-text","value":true,"target":"rf1"}'><i></i><em>사용</em></label>
-                      <label class="label_radio"><input type="radio" name="r2" data-related-form-label='{"way": "radio-text","value":false,"target":"rf1"}'><i></i><em>사용안함</em></label>
+                      <label class="label_radio"><input type="radio" id="useEvalObjY" name="r2" checked="checked" data-related-form-label='{"way": "radio-text","value":true,"target":"rf1"}'><i></i><em>사용</em></label>
+                      <label class="label_radio"><input type="radio" id="useEvalObjN" name="r2" data-related-form-label='{"way": "radio-text","value":false,"target":"rf1"}'><i></i><em>사용안함</em></label>
                     </li>
                     <li>
                       <em class="item">질문내용 :</em>
@@ -748,6 +748,12 @@
 <button type="button" id="to_top" class="hide"></button>
 <!-- GLOBAL LEVEL SCRIPT -->
 <script type="text/javascript" src="assets/js/common.ui.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#useEvalObjN").prop("checked", true).trigger("click");
+});
+</script>
+
 <!-- //GLOBAL LEVEL SCRIPT -->
 </body> 
 </html>

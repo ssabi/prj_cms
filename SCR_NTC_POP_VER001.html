@@ -41,11 +41,13 @@
         </div>
         <div class="ctrl">
           <em class="desc alert">*는 필수 입력 항목입니다.</em>
+		  <!-- 펼침/숨김 시 에디터 변경필요할시 UI.fn.toggleAccordionCallBack = function() { /* */ } 할당하시면 됩니다. -->
+          <button type="button" class="btn toggle" data-toggle-accordion='{"collapse" : "collapse1", "extend" : "extend1", "isCollapseHide" : true}'><em class="folded_msg">상세보기</em><em class="unfolded_msg">상세접기</em><i></i></button>
         </div>  
       </div>
       <div class="p_content">
         <div class="row">
-          <table class="v2">
+          <table class="v2" data-toggle-accordion-collapse="collapse1">
             <colgroup class="width5">
               <col class="c1">
               <col class="c2">
@@ -242,8 +244,20 @@
                   </div>
                 </td>
               </tr>
+            </tbody>
+          </table>
+          <table class="v2">
+            <colgroup class="width5">
+              <col class="c1">
+              <col class="c2">
+              <col class="c3">
+              <col class="c4">
+              <col class="c5">
+              <col class="c6">
+            </colgroup>
+            <tbody>
               <tr>
-                <td colspan="6" class="no_pad">
+                <td colspan="6" class="no_pad no_border_t">
                   <div class="wrap_editor_area v1"> 
                     <table class="v2">
                       <colgroup class="width6">

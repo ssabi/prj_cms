@@ -78,10 +78,59 @@ var UI;
     }
   },
 
+	//Date Format (YYYY-MM-DD)
+	getFormatDate = function(date){
+		var year = date.getFullYear();
+		var month = (1 + date.getMonth());
+		month = month >= 10 ? month : '0' + month;
+		var day = date.getDate();
+		day = day >= 10 ? day : '0' + day;
+
+		return  year + '-' + month + '-' + day;
+	},
+
   fn = {
 
-    watermark: function () {
-      $('body').prepend('<div class="watermark"></div>');
+    watermark: function (text) {
+		var html = "";
+		var opt1 = ' width="920" height="500" ';
+		var opt2 = ' width="750" height="500" ';
+		var pos1 = ' y="100" x="0" ';
+		var pos2 = ' y="350" x="0" ';
+		if(text == null || text == ""){
+			var opt1 = ' width="900" height="600" ';
+			text = "SK Telecom";
+		}
+
+		var date = new Date();
+
+		if(IEversion < 10){
+			//console.log("IE 9 이하...");
+		}else{
+			html = "";
+			html += '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="left:0px;top:0px;right:0px;bottom:0px;position:fixed;z-index:9999;fill-opacity:0.16;pointer-events:none">';
+			/*
+			html += '<defs><pattern id="textstripe" patternUnits="userSpaceOnUse" '+opt+' patternTransform="rotate(-20)">';
+			html += '<text '+pos1+' font-size="150" style="color:#000;font-family:\'맑은 고딕\', \'나눔 고딕\', Dotum, \'droid sans fallback\', \'AppleGothic\', sans-serif">'+text+'</text>';
+			html += '<text '+pos2+' font-size="150" style="color:#000;font-family:\'맑은 고딕\', \'나눔 고딕\', Dotum, \'droid sans fallback\', \'AppleGothic\', sans-serif">'+getFormatDate(date)+'</text>';
+			html += '</pattern></defs>';
+			*/
+			html += '<defs>';
+			//사번
+			html += '<pattern id="textstripe" patternUnits="userSpaceOnUse" '+opt1+' patternTransform="rotate(-20)">';
+			html += '<text '+pos1+' font-size="120" style="color:#000;font-family:\'맑은 고딕\', \'나눔 고딕\', Dotum, \'droid sans fallback\', \'AppleGothic\', sans-serif">'+text+'</text>';
+			html += '</pattern>';
+			//날짜
+			html += '<pattern id="textstripe2" patternUnits="userSpaceOnUse" '+opt2+' patternTransform="rotate(-20)">';
+			html += '<text '+pos2+' font-size="120" style="color:#000;font-family:\'맑은 고딕\', \'나눔 고딕\', Dotum, \'droid sans fallback\', \'AppleGothic\', sans-serif">'+getFormatDate(date)+'</text>';
+			html += '</pattern>';
+			html += '</defs>';
+			html += '<rect width="100%" height="100%" fill="url(#textstripe)" />';
+			html += '<rect width="100%" height="100%" fill="url(#textstripe2)" />';
+			html += '</svg>';
+		}
+		var $body = $("body");
+		$body.append(html);
     },
 
     //크로스 브라우징 폴리필
@@ -1021,6 +1070,51 @@ var UI;
       })
     },
 
+	imgOpen: function(){
+		//$('.scroll_box img').on({
+		$('.view_content img').on({
+			'click' : function(){
+				var src = $(this).attr('src');
+				var temp = src.substr(src.lastIndexOf('/')+1);
+				var name = temp.substr(0, temp.indexOf('.'));
+				var img = new Image();
+				img.src = src;
+
+				var addNum = 30;
+				var imgWidth = img.width;
+				var imgHeight = img.height;
+				imgWidth = imgWidth + addNum;
+				imgHeight = imgHeight + addNum;
+
+				//console.log("width = "+img.width);
+				//console.log("height = "+img.height);
+
+				displayImage($(this).attr('src'), name, imgWidth, imgHeight);
+
+				return false;
+			}, 
+			'mouseover' : function(){
+				$(this).css('cursor', 'pointer');
+				return false;
+			}
+		});
+
+		function displayImage(src, winname, windowWidth, windowHeight){
+			var winHandle = window.open("", winname, "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width="+windowWidth+",height="+windowHeight);
+			if(winHandle != null){
+				var htmlString = "<!DOCTYPE html><html lang='ko'><head><meta charset='utf-8'/><meta http-equiv='Content-Type' content='text/html'/><meta http-equiv='Content-Script-Type' content='text/javascript'><meta http-equiv='Content-Style-Type' content='text/css'><meta http-equiv='X-UA-Compatible' content='IE=edge'/><meta name='viewport' content='user-scalable=yes,width=1250'/><meta name='format-detection' content='telephone=no'/><meta http-equiv='imagetoolbar' content='no'/><title>이미지보기</title><style>html, body{padding:0;margin:0;height:100%}a{display:block;height:100%;width:100%}</style></head>";
+				htmlString += "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0' oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>";
+				htmlString += "<a href='javascript:window.close()'><img src='"+src+"' border='0' /></a>";
+				htmlString += "</body></html>";
+				winHandle.document.open();
+				winHandle.document.write(htmlString);
+				winHandle.document.close();
+			}
+			if(winHandle != null) winHandle.focus();
+			return winHandle;
+		}
+	},
+
     /*
     * initialize
     */
@@ -1047,6 +1141,7 @@ var UI;
       fn.toggleLinkList();
       fn.tableListLabel();
       fn.regArea();
+	  fn.imgOpen();
     }
   };
 
